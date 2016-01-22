@@ -1,0 +1,82 @@
+//declaración de una variable
+var numero;
+//Asignación de un valor a dicha variable
+numero=1;
+//impresión por consola de dicho valor de la variable
+console.log(numero);
+//declaración y asignación de un valor en uan sola línea
+var numero_2=2;
+//visualizo la segunda variable por consola
+console.log(numero_2);
+//Calculo un resultado sumando las dos variables
+var resultado = numero + numero_2;
+console.log(resultado);
+//declaración de varias variables a la vez
+var a,b,c,d;
+a=7;
+console.log(a);
+b=8;
+console.log(b);
+
+//Conversiones de tipos
+//A enteros desde cadena
+var variable1 = "hola";
+console.log(parseInt(variable1));// devuelve NaN
+
+var variable2 = "34";
+console.log(parseInt(variable2)); // devuelve 34
+
+var variable3 = "34hola23";
+console.log(parseInt(variable3)); // devuelve 34
+
+var variable4 = "34.23";
+console.log(parseInt(variable4)); // devuelve 34
+
+//A Float desde cadena
+console.log(parseFloat(variable1));// devuelve NaN
+console.log(parseFloat(variable2));// devuelve 34.0 
+console.log(parseFloat(variable3));// devuelve 34.0 
+console.log(parseFloat(variable4));// devuelve 34.23
+
+//Clases y objetos
+var cadena1 = new String("hola mundo");
+console.log(cadena1);
+var cadena2="hola mundo";
+console.log(cadena2);
+
+//propiedades de cadenas String
+//longitud (número de caracteres) de una String
+console.log(cadena1.length);
+//inicializo otro objeto String
+var cadena3=new String("Hola");
+console.log(cadena3.length);
+console.log(new String("Peperl").length);
+//Inicialización de un objeto de la clase Date()
+var fecha1 = new Date(2009, 11, 25); 
+console.log(fecha1);
+//Inicializo otra fecha
+var fecha2 = new Date(); 
+console.log(fecha2);
+console.log(fecha2.getFullYear());
+
+//escapado de caracteres especuiales
+var cadena4="hola";
+cadena4='valor';
+cadena4="otras 'dentro'";
+cadena4='otras "dentro"';
+cadena4="<p id=\"miid\">parrafo</p>";
+console.log(cadena4);
+cadena4='<p id=\'miid\'>parrafo</p>';
+console.log(cadena4);
+cadena4= "hola mundo, esta es \n una frase más larga";
+console.log(cadena4);
+
+
+
+
+
+
+
+
+
+
