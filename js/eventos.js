@@ -28,6 +28,6 @@ function init(){
     console.log('La página se ha cargado completamente');
     document.getElementById("pinchable").onclick = muestraMensaje;
 }
-
+window.onload=init;
 
 
