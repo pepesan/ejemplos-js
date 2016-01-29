@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8">
+		<meta name="autor" content="David Vaquero" />
+		<meta name="generator" content="Aptana Studio 3.6.1" />
+		<meta name="copyright" content="http://creativecommons.org/licenses/by-nc-sa/4.0/" />
+		<meta name="robots" content="index, follow" />
+		<meta name="keywords" content="html, ejemplo xhtml, esqueleto xhtml" />
+		<meta name="description" content="Ejemplo de Esqueleto de XHTML 1.0 Trasitional" />
+		<title>Mi titulo</title>
+		<script src="js/eventos.js"></script>
+	</head>
+	<body onload="init()">
+		<h1>Ejecución de código Javascript utilizando la etiqueta script</h1>
+		<input type="button" value="Pinchame y verás"
+			   onclick="console.log('Gracias por pinchar');" />
+		<input type="button" value="Otro botón"
+			   onclick="console.log('Otro Mensaje!');" />
+		<div onclick="console.log('Has pinchado con el ratón');"
+			 onmouseover="console.log('Acabas de pasar el ratón por encima');"
+			 onmouseout="console.log('Acabas de salir el ratón del elemento');"
+			 onmousemove="console.log('Muevo el ratón por encima del elemento');">
+			Puedes pinchar sobre este elemento o simplemente pasar
+			el ratón por encima
+		</div>
+		<div id="contenidos" style="width:150px; height:60px; border:thin solid silver"
+			 onmouseover="document.getElementById('contenidos').style.borderColor='black';"
+			 onmouseout="document.getElementById('contenidos').style.borderColor='silver';">
+			Sección de contenidos...
+		</div>
+		<div id="contenidos2" style="width:150px; height:60px; border:thin solid silver"
+			 onmouseover="this.style.borderColor='black';"
+			 onmouseout="this.style.borderColor='silver';">
+			Sección de contenidos...
+		</div>
+		<input type="button" value="Azul" onclick="cambiaColorDeFondo('blue')" />
+		<input type="button" value="Verde" onclick="cambiaColorDeFondo('green')" />
+		<input type="button" value="Rojo" onclick="cambiaColorDeFondo('red')" />
+		<input type="button" value="Blanco" onclick="cambiaColorDeFondo('white')" />
+		<div style="padding: .2em; width: 150px; height:60px; border: thin solid silver"
+			 onmouseover="resalta(this)"
+			 onmouseout="resalta(this)">
+			Sección de contenidos...
+		</div>
+		<input id="pinchable" type="button" value="Pinchame y verás" />
+	<script>
+
+	</script>
+	</body>
+</html>
