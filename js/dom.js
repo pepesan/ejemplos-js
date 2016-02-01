@@ -56,6 +56,7 @@ miStrong.parentNode.removeChild(miStrong);
 var misParrafos=document.getElementsByTagName("p");
 console.log(misParrafos);
 //for (var i=0;i<misParrafos.length;i++)
+
 for(i in misParrafos)
 {
     console.log(i);
