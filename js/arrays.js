@@ -71,3 +71,17 @@ for(i =0;i<hijos.length;i++){
         break;
     }
 }
+
+//declaraciones de arrays con cambios de longitud
+array=[];
+array[1]=0;
+console.log(array);
+array[10]=0;
+console.log(array);
+array[100]=0;
+console.log(array);
+array[1000]=0;
+console.log(array);
+array[10000]=0;
+console.log(array);
+console.log(array.length)

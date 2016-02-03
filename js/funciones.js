@@ -1,14 +1,38 @@
 /*
 Código de ejemplo de funciones
  */
-var a=1;
-var b=2;
+//definición de la función
+function imprimeAlgo(){
+    console.log("Algo");
+}
+//invocación o llamada a la función
+imprimeAlgo();
 
+//definición de una función que devuelve un valor
+function damePi(){
+    return Math.PI;
+}
+console.log(damePi());
+
+//definir una función a la que se le pasa un parámetro
+function imprime(cadena){
+    console.log(cadena);
+}
+imprime("Hola Mundo!");
+
+
+
+/*
+    Función sumaDeDos tiene dos parámetros numéricos y devuelve la suma de los dos
+    parámetros s1, s2
+ */
 function sumaDeDos(s1,s2){
     var res=s1+s2;
     return res;
 }
 
+var a=1;
+var b=5;
 var num=sumaDeDos(a,b);
 console.log(num);
 
@@ -38,7 +62,9 @@ console.log(global);
 var s = function suma_y_muestra(n1, n2) {
     console.log(n1+n2);
 };
-s(1,2);
+for (var i=0;i<100;i++){
+    s(1,2);
+}
 
 var objeto={
 
