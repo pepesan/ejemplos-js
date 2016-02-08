@@ -7,6 +7,9 @@ var objeto={
     apellido: "Vaquero",
     ciudad: "Salamanca",
     profesion: "autonomo",
+    edad:37,
+    activo:true,
+    cursos:["Javascript","HTML","CSS"],
     toString: function(){
         //console.log(objeto);
         //console.log(objeto.nombre);
@@ -19,6 +22,9 @@ var objeto={
     },
     setNombre: function (n) {
         this.nombre=n;
+    },
+    addCurso: function (nombreCurso){
+        this.cursos.push(nombreCurso);
     }
 };
 console.log(objeto);
@@ -29,3 +35,9 @@ console.log(objeto.toString());
 console.log(objeto.getNombre());
 objeto.setNombre("Carlos");
 console.log(objeto.getNombre());
+console.log(objeto.cursos);
+console.log(objeto.cursos[0]);
+console.log(objeto.cursos[2]);
+objeto.cursos[2]="CSS3";
+objeto.addCurso("CSS2");
+console.log(objeto.cursos);
