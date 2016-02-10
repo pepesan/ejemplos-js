@@ -1,6 +1,6 @@
 /*
  * Código de ejemplo de el lanzamiento
- * de una alerta mediante Javascript
+ * de una console.loga mediante Javascript
  */
 
 
@@ -17,7 +17,7 @@ var Person = function () {
 
 var person1 = new Person();
 console.log(person1);
-
+console.log(person1.nombre)
 /*
 console.log(person1.firstName);
 
@@ -39,12 +39,17 @@ var Coche=function (){
     this.setKm=function(km){
         this.km=km;
     };
+    this.getKm=function(){
+        return this.km;
+    };
 };
 
 
 var coche1=new Coche();
+console.log(coche1);
 coche1.km=21;
 var coche2=new Coche();
+console.log(coche2);
 coche2.setKm(34);
 console.log(coche2.km);
 
@@ -122,3 +127,134 @@ coche1={
 console.log(coche1);
 coche2=new Coche("Toyota","Aygo",11111,12000);
 console.log(coche2.km);
+
+
+//Herencia
+//Referencia: https://developer.mozilla.org/es/docs/Web/JavaScript/Introducci%C3%B3n_a_JavaScript_orientado_a_objetos
+// Definimos el constructor Persona
+var Persona=function (primerNombre) {
+    this.primerNombre = primerNombre;
+};
+var person=new Persona("Pepe");
+console.log(person.primerNombre);
+console.log(person);
+
+// Agregamos un par de métodos a Persona.prototype
+Persona.prototype.apellido="San";
+console.log(person);
+
+person=new Persona("Pepe");
+console.log(person.apellido);
+person.apellido="SANZ";
+console.log(person.apellido);
+console.log(person);
+
+Persona.prototype.caminar = function() {
+    console.log("Estoy caminando!");
+};
+
+
+Persona.prototype.diHola = function(){
+    console.log("Hola, Soy" + this.primerNombre);
+};
+
+// Definimos el constructor Estudiante
+var Estudiante=function (primerNombre, asunto) {
+    // Llamamos al constructor padre, nos aseguramos (utilizando Function#call) que "this" se
+    // ha establecido correctamente durante la llamada
+    Persona.call(this, primerNombre);
+
+    //Inicializamos las propiedades específicas de Estudiante
+    this.asunto = asunto;
+};
+
+// Creamos el objeto Estudiante.prototype que hereda desde Persona.prototype
+// Nota: Un error común es utilizar "new Persona()" para crear Estudiante.prototype
+// Esto es incorrecto por varias razones, y no menos importante, nosotros no le estamos pasando nada
+// a Persona desde el argumento "primerNombre". El lugar correcto para llamar a Persona
+// es arriba, donde nosotros llamamos a Estudiante.
+Estudiante.prototype = Object.create(Persona.prototype);    // Vea las siguientes notas
+
+// Establecer la propiedad "constructor" para referencias  a Estudiante
+Estudiante.prototype.constructor = Estudiante;
+
+// Remplazar el método "diHola"
+Estudiante.prototype.diHola = function(){
+    console.log("Hola, Soy " + this.primerNombre + ". Yo estoy estudiando " + this.asunto + ".");
+};
+
+// Agregamos el método "diAdios"
+Estudiante.prototype.diAdios = function() {
+    console.log("¡ Adios !");
+};
+
+// Ejemplos de uso
+var estudiante1 = new Estudiante("Carolina", "Física Aplicada");
+estudiante1.diHola();    // muestra "Hola, Soy Carolina. Yo estoy estudianto Física Aplicada."
+estudiante1.caminar();   // muestra "Yo estoy caminando !"
+estudiante1.diAdios();   // muestra "¡ Adios !"
+
+// Comprobamos que las instancias funcionan correctamente
+console.log(estudiante1 instanceof Persona);      // devuelve true
+console.log(estudiante1 instanceof Estudiante);   // devuelve true
+
+
+
+
+var Persona=function (primerNombre,apellido) {
+    this.primerNombre = primerNombre;
+    this.apellido=apellido;
+};
+var Estudiante=function (primerNombre,apellido, asunto) {
+    // Llamamos al constructor padre, nos aseguramos (utilizando Function#call) que "this" se
+    // ha establecido correctamente durante la llamada
+    Persona.call(this, primerNombre,apellido);
+
+    //Inicializamos las propiedades específicas de Estudiante
+    this.asunto = asunto;
+};
+Estudiante.prototype = Object.create(Persona.prototype);    // Vea las siguientes notas
+Estudiante.prototype.constructor = Estudiante;
+var estudiante=new Estudiante("Pepe","San","y a ti que carajo te importa");
+console.log(estudiante);
+
+var Vehiculo=function (ruedas,matricula) {
+    this.ruedas = ruedas;
+    this.matricula=matricula;
+};
+var Moto=function (mat) {
+    // Llamamos al constructor padre, nos aseguramos (utilizando Function#call) que "this" se
+    // ha establecido correctamente durante la llamada
+    Vehiculo.call(this, 2,mat);
+};
+Moto.prototype = Object.create(Vehiculo.prototype);    // Vea las siguientes notas
+Moto.prototype.constructor = Moto;
+var miburra=new Moto("SA1234D");
+console.log(miburra);
+
+
+
+var Vehiculo=function (ruedas) {
+    this.ruedas = ruedas;
+    this.matricula="";
+};
+var Moto=function () {
+    // Llamamos al constructor padre, nos aseguramos (utilizando Function#call) que "this" se
+    // ha establecido correctamente durante la llamada
+    Vehiculo.call(this, 2);
+    this.casco=true;
+};
+Moto.prototype = Object.create(Vehiculo.prototype);    // Vea las siguientes notas
+Moto.prototype.constructor = Moto;
+var miburra=new Moto();
+console.log(miburra);
+
+
+/*
+public class Vehiculo{
+
+}
+public class Moto extends Vehiculo{
+
+}
+ */

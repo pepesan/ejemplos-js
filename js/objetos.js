@@ -2,6 +2,10 @@
  * Código de ejemplo de el lanzamiento
  * de una alerta mediante Javascript
  */
+var arrayVacio=[];
+var objetoVacio={
+
+};
 var objeto={
     nombre: "David",
     apellido: "Vaquero",
@@ -25,6 +29,12 @@ var objeto={
     },
     addCurso: function (nombreCurso){
         this.cursos.push(nombreCurso);
+    },
+    //encapsulamiento
+    direccion:{
+        calle:"mayor",
+        numero:14,
+
     }
 };
 console.log(objeto);
@@ -41,3 +51,5 @@ console.log(objeto.cursos[2]);
 objeto.cursos[2]="CSS3";
 objeto.addCurso("CSS2");
 console.log(objeto.cursos);
+console.log(objeto.direccion);
+console.log(objeto.direccion.calle);
