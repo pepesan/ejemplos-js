@@ -84,4 +84,30 @@ array[1000]=0;
 console.log(array);
 array[10000]=0;
 console.log(array);
-console.log(array.length)
+console.log(array.length);
+
+
+array=new Array(2);
+array[0]=1;
+array[1]=2;
+console.log(array);
+console.log(array[0]);
+console.log(array.length);
+
+
+array= new Array("Hola","Buenos","días");
+console.log(array.length);
+console.log(array[0]);
+console.log(array[1]);
+console.log(array[2]);
+cadena=array.join();
+console.log(cadena);
+cadena=array.join("/");
+console.log(cadena);
+cadena=array.join(":");
+console.log(cadena);
+
+array2=new Array("Pepe","San");
+array2=new Array("Pepe","San");
+cadena=array2.join(":");
+console.log(cadena);

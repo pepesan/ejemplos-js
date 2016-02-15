@@ -5,8 +5,33 @@
 /*document.body.children[1]
     .children[0].innerHTML="demasiado sencilla";
 */
-document.getElementById("grande")
-    .innerHTML="demasiado sencilla";
+var elemento=document.getElementById("grande");
+console.log(elemento);
+console.log(elemento.id);
+console.log(elemento.className);
+console.log(elemento.lang);
+elemento.lang="en";
+console.log(elemento.lang);
+console.log(elemento.innerHTML);
+
+
+elemento.innerHTML="demasiado sencilla";
+
+
+console.log(document.body);
+console.log(document.head);
+console.log(document.title);
+console.log(document.querySelector("#grande"));
+console.log(document.querySelectorAll("meta"));
+
+
+var enlaces=document.links;
+console.log(enlaces);
+console.log(enlaces.length);
+console.log(enlaces[0]);
+//console.log(enlaces[0].href);
+
+
 document.getElementsByTagName("strong")[0]
     .innerHTML="otra manera sencilla";
 document.getElementsByClassName("miclase")[0]
@@ -16,12 +41,21 @@ document.getElementsByClassName("miclase")[0]
 //ejemplo de injerto en el árbol del DOM
 // Crear nodo de tipo Element
 var parrafo = document.createElement("p");
+console.log(parrafo);
+
 // Crear nodo de tipo Text
 var contenido = document.createTextNode("Hola Mundo!");
+console.log(contenido);
+
 // Añadir el nodo Text como hijo del nodo Element
 parrafo.appendChild(contenido);
+console.log(parrafo);
+
 // Añadir el nodo Element como hijo de la pagina
+ console.log(document.body.children.length);
+
 document.body.appendChild(parrafo);
+ console.log(document.body.children.length);
 
 
 // Crear nodo de tipo Element
@@ -55,7 +89,23 @@ miStrong.parentNode.removeChild(miStrong);
 //poda de varias ramas que sean párrafos
 var misParrafos=document.getElementsByTagName("p");
 console.log(misParrafos);
-//for (var i=0;i<misParrafos.length;i++)
+console.log(misParrafos[0]);
+console.log(misParrafos[1]);
+console.log(misParrafos[2]);
+function remove(elemento){
+    elemento.parentNode.removeChild(elemento);
+}
+remove(misParrafos[1]);
+
+misParrafos=document.getElementsByTagName("p");
+console.log(misParrafos.length);
+remove(misParrafos[1]);
+misParrafos=document.getElementsByTagName("p");
+console.log(misParrafos.length);
+/*
+for (var i=0;i<misParrafos.length;i++){
+    console.log(misParrafos[i]);
+}
 
 for(i in misParrafos)
 {

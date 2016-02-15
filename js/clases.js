@@ -30,6 +30,10 @@ console.log(person1.firstName);
 var person2 = new Person();
 console.log(person2);
 
+//función normal
+function hola(){
+    console.log("Hola");
+}
 
 var Coche=function (){
     this.marca="";
@@ -47,11 +51,16 @@ var Coche=function (){
 
 var coche1=new Coche();
 console.log(coche1);
-coche1.km=21;
+coche1.setKm(21);
+coche1.modelo="Ibiza";
+coche1.bastidor=1232345;
+coche1.marca="Seat";
+
+console.log(coche1.getKm());
 var coche2=new Coche();
 console.log(coche2);
 coche2.setKm(34);
-console.log(coche2.km);
+console.log(coche2.getKm());
 
 
 Coche=function (marca){
@@ -67,7 +76,7 @@ Coche=function (marca){
 
 coche1=new Coche("Toyota");
 console.log(coche1.marca);
-coche2=new Coche("Toyota");
+coche2=new Coche("Nissan");
 console.log(coche2.marca);
 
 Coche=function (marca,modelo){
@@ -250,7 +259,7 @@ var miburra=new Moto();
 console.log(miburra);
 
 
-/*
+/*x
 public class Vehiculo{
 
 }
@@ -258,3 +267,18 @@ public class Moto extends Vehiculo{
 
 }
  */
+
+var Padre=function(proPadre){
+    this.proPadre=proPadre;
+};
+var Hija=function(proPadre,proHija){
+    Padre.call(this,proPadre);
+    this.proHija=proHija;
+};
+Hija.prototype=Object.create(Padre.prototype);
+Hija.prototype.constructor=Hija;
+
+var paqui=new Hija("ValorPadre","ValorHija");
+console.log(paqui);
+console.log(paqui.proHija);
+console.log(paqui.proPadre);
