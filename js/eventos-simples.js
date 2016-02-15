@@ -16,6 +16,12 @@ function cambiaBoton(){
 
 function init(){
     console.log('La página se ha cargado completamente');
+}
+window.addEventListener("load", init);
+//window.onload=init;
+
+function domCargado(event) {
+    console.log("El DOM se ha cargado completamente");
     var boton=document.getElementById("boton");
     boton.addEventListener("click",cambiaBoton);
     //boton.onclick=cambiaBoton;
@@ -23,5 +29,4 @@ function init(){
     enlace.addEventListener("click",cambia);
     //enlace.onclick=cambia;
 }
-window.addEventListener("load", init);
-//window.onload=init;
+document.addEventListener("DOMContentLoaded", domCargado);
