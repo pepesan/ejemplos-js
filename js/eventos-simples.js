@@ -6,17 +6,19 @@ function cambia(evento){
     evento.preventDefault();
     console.log("Pulsado!");
 }
-var enlace=document.getElementById("enlace");
-enlace.onclick=cambia;
+
 
 function cambiaBoton(){
     console.log("Botón pulsado");
 }
 
-var boton=document.getElementById("boton");
-boton.onclick=cambiaBoton;
+
 
 function init(){
     console.log('La página se ha cargado completamente');
+    var boton=document.getElementById("boton");
+    boton.onclick=cambiaBoton;
+    var enlace=document.getElementById("enlace");
+    enlace.onclick=cambia;
 }
 window.onload=init;
