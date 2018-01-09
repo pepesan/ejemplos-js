@@ -122,14 +122,90 @@ for (var i=0;i<10;i+=2){
 //Ejercicios de repaso
 /*
 1.- Crea un array de 200 posiciones
-2.- Imprime por pantalla los datos del array del ejercicio 1
-3.- Cambia los datos de las posiciones 4, 7 y 18 del array y pon un valor de tipo String
-4.- En las posiciones 9, 34 y 45 pon un valor booleano
-5.- Crea un array de 30 posiciones
-6. Recorre el array anterior con todos los tipos de bucle (while, do-while, for, for-in) e imprime por pantalla los datos
-7.- Define una variable booleana llamada tengoCarnet
-8.- Define una sentencia condicional para que si la variable tengoCarnet es true saque un mensaje por pantalla diciendo que puedo conducir
-9.- Define una variable llamada nota (como la de un examen)
-10. Haz un código para que dependiendo de dicha nota si es menor que 5 sea un suspenso, entre 5 y 6 un aprobado, entre 7 y 8 un notable y entre 9 y 10 un sobresaliente
-
 */
+/*
+2.- Imprime por pantalla los datos del array del ejercicio 1
+*/
+var dosc=[];
+for (var i=0;i<200;i++){
+    dosc.push(0);
+    console.log(dosc[i]);
+}
+//console.log(dosc);
+/*
+3.- Cambia los datos de las posiciones 4, 7 y 18 del array y pon un valor de tipo String
+*/
+dosc[4]="Hola!!!";
+dosc[7]="Hola!!!";
+dosc[18]="Hola!!!";
+/*
+4.- En las posiciones 9, 34 y 45 pon un valor booleano
+*/
+var i=0;
+dosc[i]=true;
+dosc[34]=false;
+dosc[45]=false;
+/*
+5.- Crea un array de 30 posiciones
+*/
+var tre=[];
+for (var i=0;i<30;i++){
+    tre[i]=0;
+}
+
+/*
+6. Recorre el array anterior con todos los tipos de bucle (while, do-while, for, for-in) e imprime por pantalla los datos
+*/
+var i=0;
+while(i<30){
+    console.log(tre[i]);
+    i++;
+}
+
+
+var i=0;
+do{
+    console.log(tre[i]);
+    i++;
+}while(i<30);
+
+for(var i=0;i<30;i++){
+    console.log(tre[i]);
+}
+
+
+for( var otra_cosa in tre){
+    console.log(tre[otra_cosa]);
+}
+/*
+7.- Define una variable booleana llamada tengoCarnet
+*/
+var tengoCarnet;
+tengoCarnet=false;
+/*
+8.- Define una sentencia condicional para que si la variable tengoCarnet es true saque un mensaje por pantalla diciendo que puedo conducir
+*/
+if(tengoCarnet){
+    console.log("Puedo conducir");
+}
+/*
+9.- Define una variable llamada nota (como la de un examen)
+*/
+var nota=7;
+
+/*
+10. Haz un código para que dependiendo de dicha nota si es menor que 5 sea un suspenso, entre 5 y 7 un aprobado, entre 7 y 9 un notable y entre 9 y 10 un sobresaliente
+*/
+if(nota<5){
+    console.log("Suspendido!");
+}else  if(nota<7 && nota>=5){
+        console.log("Aprobado");
+}else  if(nota<9 && nota>=7){
+        console.log("Notable");
+}else  if(nota<=10 && nota>=9){
+        console.log("Sobresaliente");
+}else  if(nota>10){
+        console.log("Matrícula de honor");
+}else{
+    console.log("¿Cómo cojones puntuas tu mamon!!!?")
+}
