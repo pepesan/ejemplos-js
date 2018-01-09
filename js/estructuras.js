@@ -4,7 +4,7 @@ var edad = 17;
 if (edad >= 18) {
 	console.log("Ya estás registrado");
 } else {
-	console.log("Necesitas ser mayor de edad par registrarte!");
+	console.log("Necesitas ser mayor de edad para registrarte!");
 }
 
 //puedo conducir un coche?
@@ -20,7 +20,7 @@ if (edad >= 18 && tengoCarnet && puntos > 0) {
 //puedo comer carne en semana santa?
 var tengoBulaPapal = false;
 var existeLaInquisicion = false;
-if (tengoBulaPapal || !existeLaInquisicion) {
+if (tengoBulaPapal || (!existeLaInquisicion)) {
 	console.log("A comer!!!!");
 } else {
 	console.log("TE JODES!!!");
@@ -91,14 +91,14 @@ while (veces < 2) {
 }
 
 //do-while
-veces = 0;
+veces = 3;
 do {
 	console.log("Mensaje " + veces);
 	veces++;
 } while (veces < 2);
 
 //for
-for (var i = 0; i < 3; i++) {
+for (var i = 0; i < 2; i++) {
 	console.log("Mensaje " + i);
 }
 /*
