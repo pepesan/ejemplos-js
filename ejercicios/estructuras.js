@@ -117,3 +117,19 @@ switch(numerrores){
 for (var i=0;i<10;i+=2){
     console.log(i);
 }
+
+
+//Ejercicios de repaso
+/*
+1.- Crea un array de 200 posiciones
+2.- Imprime por pantalla los datos del array del ejercicio 1
+3.- Cambia los datos de las posiciones 4, 7 y 18 del array y pon un valor de tipo String
+4.- En las posiciones 9, 34 y 45 pon un valor booleano
+5.- Crea un array de 30 posiciones
+6. Recorre el array anterior con todos los tipos de bucle (while, do-while, for, for-in) e imprime por pantalla los datos
+7.- Define una variable booleana llamada tengoCarnet
+8.- Define una sentencia condicional para que si la variable tengoCarnet es true saque un mensaje por pantalla diciendo que puedo conducir
+9.- Define una variable llamada nota (como la de un examen)
+10. Haz un código para que dependiendo de dicha nota si es menor que 5 sea un suspenso, entre 5 y 6 un aprobado, entre 7 y 8 un notable y entre 9 y 10 un sobresaliente
+
+*/
