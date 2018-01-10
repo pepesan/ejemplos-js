@@ -58,13 +58,17 @@ for(var i=0;i<10;i++){
 }
 console.log(global);
 
-
-var s = function suma_y_muestra(n1, n2) {
+function suma_y_muestra(n1, n2) {
     console.log(n1+n2);
-};
+}
+suma_y_muestra(3,4);
+
+var s = suma_y_muestra;
+
 for (var i=0;i<100;i++){
     s(1,2);
 }
+
 
 var objeto={
 
