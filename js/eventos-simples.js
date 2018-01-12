@@ -30,3 +30,4 @@ function domCargado(event) {
     //enlace.onclick=cambia;
 }
 document.addEventListener("DOMContentLoaded", domCargado);
+

@@ -14,7 +14,6 @@ elemento.lang="en";
 console.log(elemento.lang);
 console.log(elemento.innerHTML);
 
-
 elemento.innerHTML="demasiado sencilla";
 
 
