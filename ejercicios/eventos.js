@@ -1,7 +1,4 @@
-/*
-1.- Crea un fichero html con un fichero JS asociado
-2.- Haz que cuando el DOM esté cargado saque un mensaje por consola: "Dom cargado", la función que se ejecutará se llamará init
-*/
+
 /*
 4.- Introduce un enlace a google en el código HTML cuyo identificativo sea "mienlace" con el texto "Vete a Google"
 * Hecho
@@ -19,6 +16,10 @@ function gestionaClick(evento){
 function risaMalvada(){
     console.log("MUHAHAHAHAHA!");
 }
+/*
+1.- Crea un fichero html con un fichero JS asociado
+2.- Haz que cuando el DOM esté cargado saque un mensaje por consola: "Dom cargado", la función que se ejecutará se llamará init
+*/
 function init(){
     console.log("Dom cargado");
     var mienlace=document.getElementById("mienlace");
