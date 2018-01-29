@@ -1,10 +1,15 @@
 /*
  * Código de ejemplo de el lanzamiento
- * de una console.loga mediante Javascript
+ * de una console.log mediante Javascript
  */
 
 
-var array=new Array(10);
+var array=[];
+array=[2,3];
+array=new Array(10);
+array=[undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined];
+array=new Array(2);
+array.push("HOLA");
 
 //función constructora
 var Person = function () {
@@ -14,8 +19,15 @@ var Person = function () {
     //this.firstName = nombre;
     //console.log('instance created');
 };
-
+//var i=0;
+//var i=new Number(0);
 var person1 = new Person();
+
+array=[];
+for (var i=0;i<10;i++){
+    person1 = new Person();
+    array.push(person1);
+}
 console.log(person1);
 console.log(person1.nombre)
 /*
