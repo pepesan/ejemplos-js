@@ -9,7 +9,7 @@
 8.- Haz que cada vez que se cree un objeto de la clase Moto ese objeto tenga 0 km
 9.- Demuéstralo creando otro objeto de la clase Moto e imprimiendo este valor por pantalla
 10.- Crea los getter y setter de km y matricula para la clase Moto
-11.- Utilízalos desde el objeto miburra
+11.- Utilízalos desde el objeto miBurra
 12.- Haz que el constructor de la clase Moto pueda disponer de dos parámetros para las dos propiedades de Moto: km y matricula
 13.- Construye otro objeto de clase moto, llamando a este nuevo constructor con dos parámetros y comprueba que ha rellenado correctamente las propiedades de ese nuevo objeto con los parámetros del constructor
 14.- Crea una clase llamada Animal, que tenga una propiedad  llamada edad, que sea inicializada a 0
