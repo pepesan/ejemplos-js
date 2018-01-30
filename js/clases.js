@@ -122,18 +122,44 @@ coche1=new Coche("Toyota","Auris",12345);
 console.log(coche1.bastidor);
 coche2=new Coche("Toyota","Aygo",11111);
 console.log(coche2.bastidor);
-Coche=function (marca,modelo,bastidor,km){
+Coche=function (marca="",modelo="",bastidor=0,km=0){
     this.marca=marca;
     this.modelo=modelo;
     this.bastidor=bastidor;
     this.km=km;
-    this.setKm=function(km){
+    this.setKm=function(km=0){
         this.km=km;
     };
 };
 
 
-coche1=new Coche("Toyota","Auris",12345,0);
+coche1=new Coche("Toyota","Auris",12345,20);
+coche1=new Coche("Toyota","Auris",12345);
+console.log(coche1.km);//km=0
+coche1=new Coche("Toyota","Auris");
+console.log(coche1.km);//km=0
+console.log(coche1.bastidor);//bastidor=0
+coche1=new Coche("Toyota");
+console.log(coche1.km);//km=0
+console.log(coche1.bastidor);//bastidor=0
+console.log(coche1.modelo);//modelo=""
+coche1=new Coche();
+console.log(coche1.km);//km=0
+console.log(coche1.bastidor);//bastidor=0
+console.log(coche1.modelo);//modelo=""
+console.log(coche1.marca);//marca=""
+coche1=new Coche("","",0,20);
+console.log(coche1.km);//km=20
+console.log(coche1.bastidor);//bastidor=0
+console.log(coche1.modelo);//modelo=""
+console.log(coche1.marca);//marca=""
+/*
+coche1=new Coche();
+coche1.marca="Toyota";
+coche1.modelo="Auris";
+coche1.bastidor=12345;
+coche1.km=0;
+*/
 console.log(coche1.km);
 console.log(coche1);
 coche1={
@@ -162,8 +188,13 @@ console.log(person);
 
 // Agregamos un par de métodos a Persona.prototype
 Persona.prototype.apellido="San";
+// el objeto instanciado previamente no se ve modificado
 console.log(person);
+//Si quisiera modificar ese objeto lo haría normalmente
+person.apellido="San";
+console.log(person.apellido);
 
+//el nuevo objeto ya se vería afectado con la modificación hecha con prototype
 person=new Persona("Pepe");
 console.log(person.apellido);
 person.apellido="SANZ";
@@ -179,8 +210,78 @@ Persona.prototype.diHola = function(){
     console.log("Hola, Soy" + this.primerNombre);
 };
 
+
+var Persona=function () {
+    this.primerNombre = "";
+    this.apellido="";
+};
 // Definimos el constructor Estudiante
-var Estudiante=function (primerNombre, asunto) {
+var Estudiante=function () {
+    // Llamamos al constructor padre, nos aseguramos (utilizando Function#call) que "this" se
+    // ha establecido correctamente durante la llamada
+    Persona.call(this);
+    /*
+    this.primerNombre="";
+    this.apellido="";
+    */
+};
+
+var estu1=new Estudiante();
+console.log(estu1);
+estu1.primerNombre="Pepe";
+console.log(estu1.primerNombre);
+
+
+var Persona=function (primerNombre="") {
+    this.primerNombre = primerNombre;
+};
+// Definimos el constructor Estudiante
+var Estudiante=function () {
+    // Llamamos al constructor padre, nos aseguramos (utilizando Function#call) que "this" se
+    // ha establecido correctamente durante la llamada
+    Persona.call(this);
+};
+estu1=new Estudiante();
+console.log(estu1);
+estu1.primerNombre="Pepe";
+console.log(estu1.primerNombre);
+
+
+var Persona=function (primerNombre="") {
+    this.primerNombre = primerNombre;
+};
+// Definimos el constructor Estudiante
+var Estudiante=function () {
+    // Llamamos al constructor padre, nos aseguramos (utilizando Function#call) que "this" se
+    // ha establecido correctamente durante la llamada
+    Persona.call(this,"Juan");
+};
+estu1=new Estudiante();
+console.log(estu1);
+estu1.primerNombre="Pepe";
+console.log(estu1.primerNombre);
+
+
+var Persona=function (primerNombre="") {
+    this.primerNombre = primerNombre;
+};
+// Definimos el constructor Estudiante
+var Estudiante=function (primerNombre) {
+    // Llamamos al constructor padre, nos aseguramos (utilizando Function#call) que "this" se
+    // ha establecido correctamente durante la llamada
+    Persona.call(this, primerNombre);
+
+};
+estu1=new Estudiante("Juan");
+console.log(estu1);
+estu1.primerNombre="Pepe";
+console.log(estu1.primerNombre);
+
+var Persona=function (nombre="") {
+    this.nombre = nombre;
+};
+// Definimos el constructor Estudiante
+var Estudiante=function (primerNombre="", asunto="") {
     // Llamamos al constructor padre, nos aseguramos (utilizando Function#call) que "this" se
     // ha establecido correctamente durante la llamada
     Persona.call(this, primerNombre);
@@ -188,7 +289,16 @@ var Estudiante=function (primerNombre, asunto) {
     //Inicializamos las propiedades específicas de Estudiante
     this.asunto = asunto;
 };
-
+estu1=new Estudiante("Juan");
+console.log(estu1);
+estu1.nombre="Pepe";
+console.log(estu1.nombre);
+estu1=new Estudiante("Juan","Interno");
+console.log(estu1);
+console.log(estu1.nombre);
+console.log(estu1.asunto);
+estu1.nombre="Pepe";
+console.log(estu1.nombre);
 // Creamos el objeto Estudiante.prototype que hereda desde Persona.prototype
 // Nota: Un error común es utilizar "new Persona()" para crear Estudiante.prototype
 // Esto es incorrecto por varias razones, y no menos importante, nosotros no le estamos pasando nada
@@ -207,6 +317,10 @@ Estudiante.prototype.diHola = function(){
 // Agregamos el método "diAdios"
 Estudiante.prototype.diAdios = function() {
     console.log("¡ Adios !");
+};
+
+Persona.prototype.caminar = function() {
+    console.log("Estoy caminando!");
 };
 
 // Ejemplos de uso
@@ -294,3 +408,34 @@ var paqui=new Hija("ValorPadre","ValorHija");
 console.log(paqui);
 console.log(paqui.proHija);
 console.log(paqui.proPadre);
+
+
+//Composición una clase incluye un objeto de otra clase
+var Direccion=function(calle=""){
+    this.calle=calle;
+    this.portal="";
+    this.piso="";
+    this.puerta="";
+    this.localidad="";
+    this.provincia="";
+    this.pais="";
+};
+var dir=new Direccion("Gran vía");
+
+var Cliente=function(nombre=""){
+    this.nombre=nombre;
+    this.direccionPostal=new Direccion();
+};
+var c1=new Cliente();
+console.log(c1);
+
+
+var Cliente=function(nombre="",calle="",piso=""){
+    this.nombre=nombre;
+    this.direccionPostal=new Direccion(calle);
+    this.direccionPostal.piso=piso;
+};
+var c1=new Cliente("Pepe","Gran Vía","3º");
+console.log(c1);
+
+

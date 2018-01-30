@@ -11,7 +11,7 @@
 10.- Crea los getter y setter de km y matricula para la clase Moto
 11.- Utilízalos desde el objeto miburra
 12.- Haz que el constructor de la clase Moto pueda disponer de dos parámetros para las dos propiedades de Moto: km y matricula
-13.- Construye otro objeto de clase moto, llamando a este nuevo constructor con dos parámetro y comprueba que ha rellenado correctamente las propiedades de ese nuevo objeto con los parámetros del constructor
+13.- Construye otro objeto de clase moto, llamando a este nuevo constructor con dos parámetros y comprueba que ha rellenado correctamente las propiedades de ese nuevo objeto con los parámetros del constructor
 14.- Crea una clase llamada Animal, que tenga una propiedad  llamada edad, que sea inicializada a 0
 15.- Crea un objeto de la clase Aminal, llamado animalico
 16.- Imprime por pantalla el objeto animalico y la propiedad edad del objeto
