@@ -439,3 +439,23 @@ var c1=new Cliente("Pepe","Gran Vía","3º");
 console.log(c1);
 
 
+
+//herencia de tres niveles
+var Vehiculo=function(edad=""){
+    this.edad=edad;
+}
+
+var Coche=function(edad,marca){
+    Vehiculo.call(this,edad);
+    this.marca=marca;
+}
+
+var Suv=function(edad,marca,traccion){
+    Coche.call(this,edad,marca);
+    this.traccion=traccion;
+}
+
+var miSuv=new Suv();
+console.log(miSuv);
+miSuv=new Suv(12,"Toyota",4);
+console.log(miSuv);
