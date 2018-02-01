@@ -1,8 +1,13 @@
 var miTimer;
 var miIntervalo;
-
+var seg=0;
 function presentaMensaje(){
     console.log("Mensaje");
+}
+function sumaSegundos(){
+    console.log("Mensaje");
+    seg++;
+    document.getElementById("panel").innerHTML=seg;
 }
 function lanzaTimer(){
     console.log("lanzando timer");
@@ -14,11 +19,13 @@ function paraTimer(){
 }
 function lanzaFuncionIntervalo(){
     console.log("lanzando intervalo");
-    miIntervalo=setInterval(presentaMensaje, 3000);
+    miIntervalo=setInterval(sumaSegundos, 1000);
 }
 function paraFuncionIntervalo() {
     console.log("parando intervalo");
     clearInterval(miIntervalo);
+    document.getElementById("panel").innerHTML=0;
+    seg=0;
 }
 function init(){
     console.log("Dom cargado");
