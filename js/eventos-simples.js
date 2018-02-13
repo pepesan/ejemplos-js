@@ -22,8 +22,9 @@ window.addEventListener("load", init);
 
 function domCargado(event) {
     console.log("El DOM se ha cargado completamente");
+    //$("#boton")
     var boton=document.getElementById("boton");
-    boton.addEventListener("click",cambiaBoton);
+    //boton.addEventListener("click",cambiaBoton);
     //boton.onclick=cambiaBoton;
     var enlace=document.getElementById("enlace");
     enlace.addEventListener("click",cambia);
