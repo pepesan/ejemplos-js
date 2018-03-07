@@ -66,11 +66,25 @@ console.log(Counter2.value()); /* Muestra 0 */
 
 
 //funciones anónimas
+/*
+function imprime() {
+  console.log('Esta función no tiene nombre y\
+    se ejecutara inmediatamente');
+}
+imprime();
+*/
 (function () {
   console.log('Esta función no tiene nombre y\
     se ejecutara inmediatamente');
 }());
-
+/*
+function imprimeNumeros(uno, dos, tres) {
+  console.log(uno);
+  console.log(dos);
+  console.log(tres);
+}
+imprimeNumeros(1,2,3);
+*/
 (function (uno, dos, tres) {
   console.log(uno);
   console.log(dos);
