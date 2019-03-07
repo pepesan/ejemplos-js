@@ -156,3 +156,24 @@ for (i in cadena6){
 }
 
 
+const team = {
+	founder: 'John',
+	lead: 'Tom',
+	frontend: 'Marc',
+	backend: 'Lucas',
+	admin: 'Tim'
+}
+
+function *teamGenerator(team) {
+	yield team.founder;
+	yield team.lead;
+	yield team.frontend;
+	yield team.backend;
+	yield team.admin;
+}
+
+for (const member of teamGenerator(team)) {
+	console.log(member);
+}
+
+
