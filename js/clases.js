@@ -462,7 +462,7 @@ console.log(miSuv);
 
 
 //ECMASCRIPT 6
-
+//Definición de clase con ES6
 class Point {
     constructor(x, y) {
         this.x = x;
@@ -473,6 +473,7 @@ class Point {
     }
 }
 
+//Herencia en ES6
 class ColorPoint extends Point {
     constructor(x, y, color) {
         super(x, y);
@@ -488,3 +489,96 @@ cp.toString(); // '(25, 8) in green'
 
 console.log(cp instanceof ColorPoint); // true
 console.log(cp instanceof Point); // true
+
+
+//Métodos y atributyos estáticos
+class SimpleDate {
+    static setDefaultDate(year, month, day) {
+        // A static property can be referred to without mentioning an instance
+        // Instead, it's defined on the class
+        SimpleDate._defaultDate = new SimpleDate(year, month, day);
+    }
+
+    constructor(year, month, day) {
+        // If constructing without arguments,
+        // then initialize "this" date by copying the static default date
+        if (arguments.length === 0) {
+            this._year = SimpleDate._defaultDate._year;
+            this._month = SimpleDate._defaultDate._month;
+            this._day = SimpleDate._defaultDate._day;
+
+            return;
+        }
+
+        // Check that (year, month, day) is a valid date
+        // ...
+
+        // If it is, use it to initialize "this" date
+        this._year = year;
+        this._month = month;
+        this._day = day;
+    }
+
+    addDays(nDays) {
+        // Increase "this" date by n days
+        // ...
+    }
+
+    getDay() {
+        return this._day;
+    }
+}
+
+SimpleDate.setDefaultDate(1970, 1, 1);
+const defaultDate = new SimpleDate();
+
+
+//Getters y Setters
+class Rectangle {
+    set width(w) {
+        this._width = w;
+    }
+
+    get width() {
+        return this._width;
+    }
+
+    set height(h) {
+        this._height = h;
+    }
+
+    get height() {
+        return this._height;
+    }
+}
+
+// A function that operates on an instance of Rectangle
+function f(rectangle) {
+    rectangle.width = 5;
+    rectangle.height = 4;
+
+    // Verify expected result
+    if (rectangle.width * rectangle.height !== 20) {
+        throw new Error("Expected the rectangle's area (width * height) to be 20");
+    }
+}
+
+// A square IS-A rectangle... right?
+class Square extends Rectangle {
+    set width(w) {
+        super.width = w;
+
+        // Maintain square-ness
+        super.height = w;
+    }
+
+    set height(h) {
+        super.height = h;
+
+        // Maintain square-ness
+        super.width = h;
+    }
+}
+
+// But can a rectangle be substituted by a square?
+f(new Square()); // error
