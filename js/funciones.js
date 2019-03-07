@@ -135,3 +135,44 @@ console.log(miclase.alumnos[1].nombre);
 console.log(miclase.alumnos[1].edad);
 
 
+//ES6
+
+//funciones Flecha (Arrow)
+var materials = [
+    'Hydrogen',
+    'Helium',
+    'Lithium',
+    'Beryllium'
+];
+
+console.log(materials.map(material => material.length));
+// expected output: Array [8, 6, 7, 9]
+
+elementos.map(({length}) => length); // [8, 6, 7, 9]
+
+var func = x => x * x;
+// sintaxis de cuerpo conciso, el "return" está implícito
+
+var func = (x, y) => { return x + y; };
+// con cuerpo de bloque, se necesita "return" explícito
+
+// Parámetros Rest (Rest Parameters)
+function myFun(a, b, ...manyMoreArgs) {
+    console.log("a", a);
+    console.log("b", b);
+    console.log("manyMoreArgs", manyMoreArgs);
+}
+
+myFun("one", "two", "three", "four", "five", "six");
+
+// Console Output:
+// a, one
+// b, two
+// manyMoreArgs, [three, four, five, six]
+
+function sortRestArgs(...theArgs) {
+    var sortedArgs = theArgs.sort();
+    return sortedArgs;
+}
+
+console.log(sortRestArgs(5,3,7,1)); // muestra 1,3,5,7

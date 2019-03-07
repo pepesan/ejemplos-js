@@ -18,6 +18,10 @@ console.log(a);
 b=8;
 console.log(b);
 
+/*
+ Extensions to the Number built-in object in ES6, including constant properties EPSILON, MIN_SAFE_INTEGER, and MAX_SAFE_INTEGER, and methods isFinite, isInteger, isSafeInteger, and isNaN.
+*/
+
 //Conversiones de tipos
 //A enteros desde cadena
 var variable1 = "hola";
@@ -51,6 +55,27 @@ console.log(cadena1.length);
 var cadena3=new String("Hola");
 console.log(cadena3.length);
 console.log(new String("Peperl").length);
+
+// Inclusión en ES6 Plantillas de literales
+var a = 5;
+var b = 10;
+console.log(`Quince es ${a + b} y\nno ${2 * a + b}.`);
+
+//definición de una variable localizada
+let inmutable="Pepe";
+//este tipo de variables son interesantes dentro de funciones
+function mi_funcion_chorra(){
+    //Esta variable es distinta
+    let vari=2;
+}
+// a esta variable
+let vari=2;
+
+// Constantes
+const a = 7;
+document.writeln("a es " + a + ".");
+// No es posible a=8;
+
 //Inicialización de un objeto de la clase Date()
 var fecha1 = new Date(2009, 11, 25); 
 console.log(fecha1);
