@@ -26,6 +26,7 @@ imprime("Hola Mundo!");
     Función sumaDeDos tiene dos parámetros numéricos y devuelve la suma de los dos
     parámetros s1, s2
  */
+// s1=a=1, s2=b=5
 function sumaDeDos(s1,s2){
     var res=s1+s2;
     return res;
@@ -34,6 +35,9 @@ function sumaDeDos(s1,s2){
 var a=1;
 var b=5;
 var num=sumaDeDos(a,b);
+console.log(num);
+// s1= 3, s2=7
+num = sumaDeDos(3,7);
 console.log(num);
 
 function restaDeDos(r1,r2){
