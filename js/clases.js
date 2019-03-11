@@ -463,17 +463,55 @@ console.log(miSuv);
 
 //ECMASCRIPT 6
 //Definición de clase con ES6
+class Person {
+    constructor(){
+        this.nombre="";
+        this.altura=0;
+        this.peso=0;
+    }
+    //this.firstName = nombre;
+    //console.log('instance created');
+    getNombre(){
+        return this.nombre;
+    }
+    setNombre(nombre){
+        this.nombre=nombre;
+    }
+}
+
+var persona= new Person();
+console.log(persona.altura);
+persona.setNombre("Pepe");
+console.log(persona.getNombre());
+
+
+//Herencia en ES6
 class Point {
     constructor(x, y) {
         this.x = x;
         this.y = y;
     }
     toString() {
-        return '(' + this.x + ', ' + this.y + ')';
+        return 'Point{"x":' + this.x + ',"y":' + this.y + '}';
     }
 }
 
-//Herencia en ES6
+var punto = new Point(2,3);
+// imprimirá 2
+console.log("X: "+punto.x);
+// imprimirá 3
+console.log("Y: "+punto.y);
+// acceder al valor de una propiedad
+punto.x=5;
+// extraer el valor de una propiedad
+// imprimirá 5 porque x en punto vale 5
+console.log("X: "+punto.x);
+punto.y=7;
+// imprimirá 7 porque x en punto vale 7
+console.log("Y: "+punto.y);
+
+var punto2= new Point(3,4);
+
 class ColorPoint extends Point {
     constructor(x, y, color) {
         super(x, y);
@@ -503,6 +541,7 @@ class SimpleDate {
         // If constructing without arguments,
         // then initialize "this" date by copying the static default date
         if (arguments.length === 0) {
+            //atributos privados
             this._year = SimpleDate._defaultDate._year;
             this._month = SimpleDate._defaultDate._month;
             this._day = SimpleDate._defaultDate._day;
@@ -551,6 +590,9 @@ class Rectangle {
         return this._height;
     }
 }
+var cuadro= new Rectangle();
+cuadro.height=3;
+cuadro.width=4;
 
 // A function that operates on an instance of Rectangle
 function f(rectangle) {
@@ -581,4 +623,4 @@ class Square extends Rectangle {
 }
 
 // But can a rectangle be substituted by a square?
-f(new Square()); // error
+//f(new Square()); // error
