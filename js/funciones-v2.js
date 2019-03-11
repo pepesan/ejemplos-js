@@ -49,3 +49,13 @@ for (var i=0;i<numero;i++) {
 	//console.log(total);
 }
 */
+// Parámetros por defecto (opcionales)
+function porDefecto(a = 0, b = 0) {
+	return a+b;
+}
+
+console.log(porDefecto(2,3));
+console.log(porDefecto(2));
+console.log(porDefecto());
+console.log(porDefecto(null, 3));
+
