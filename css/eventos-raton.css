@@ -1,0 +1,10 @@
+.box{
+    width: 20%;
+    height: 200px;
+    border: red 1px solid;
+    background-color: bisque;
+}
+
+.colorea{
+    background-color: aqua;
+}
