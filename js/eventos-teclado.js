@@ -21,6 +21,10 @@ function teclaPulsada(evento) {
     console.log(evento.keyCode);
 }
 
+function textoCambiado(evento) {
+    console.log("Texto Cambiado: "+ evento.currentTarget.value);
+}
+
 function pierdefoco(evento) {
     console.log(evento.currentTarget+" ya no tiene el foco");
 }
@@ -30,9 +34,10 @@ function domCargado(event) {
     var campo= document.getElementById("username");
     campo.addEventListener("focus",foco);
     campo.addEventListener("blur",pierdefoco);
-    campo.addEventListener("keydown",teclaPulsada);
-    campo.addEventListener("keypress",teclaPulsada);
+    //campo.addEventListener("keydown",teclaPulsada);
+    //campo.addEventListener("keypress",teclaPulsada);
     campo.addEventListener("keyup",teclaPulsada);
+    campo.addEventListener("input",textoCambiado);
 }
 document.addEventListener("DOMContentLoaded", domCargado);
 
