@@ -7,9 +7,15 @@ function cambia(evento){
     console.log("Pulsado!");
 }
 
-
+function creaParrafo() {
+    var parrafo = document.createElement("p");
+    var contenido = document.createTextNode("Hola Mundo!");
+    parrafo.appendChild(contenido);
+    document.body.appendChild(parrafo);
+}
 function cambiaBoton(){
     console.log("Botón pulsado");
+    creaParrafo();
 }
 
 
@@ -24,7 +30,7 @@ function domCargado(event) {
     console.log("El DOM se ha cargado completamente");
     //$("#boton")
     var boton=document.getElementById("boton");
-    //boton.addEventListener("click",cambiaBoton);
+    boton.addEventListener("click",cambiaBoton);
     //boton.onclick=cambiaBoton;
     var enlace=document.getElementById("enlace");
     enlace.addEventListener("click",cambia);
