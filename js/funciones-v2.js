@@ -59,3 +59,20 @@ console.log(porDefecto(2));
 console.log(porDefecto());
 console.log(porDefecto(null, 3));
 
+
+var funcion = function (){
+	console.log("Algo")
+};
+
+function ejecuta_funcion(f){
+	f();
+	return "Patatas";
+}
+ejecuta_funcion(funcion);
+
+ejecuta_funcion(function () {
+	console.log("Algo");
+});
+ejecuta_funcion(() =>{
+	console.log("Pececito")
+});

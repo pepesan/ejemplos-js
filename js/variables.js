@@ -90,6 +90,7 @@ cadena4='valor';
 cadena4="otras 'dentro'";
 cadena4='otras "dentro"';
 cadena4="<p id=\"miid\">parrafo</p>";
+cadena4='<p id="miid">parrafo</p>';
 console.log(cadena4);
 cadena4='<p id=\'miid\'>parrafo</p>';
 console.log(cadena4);
