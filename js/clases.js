@@ -11,6 +11,15 @@ array=[undefined,undefined,undefined,undefined,undefined,undefined,undefined,und
 array=new Array(2);
 array.push("HOLA");
 
+arrayMulti= [
+    {},
+    {},
+    ["uno","dos"],
+    [
+       ["Uno", "Dos"]
+    ]
+];
+
 //función constructora
 var Person = function () {
     this.nombre="";
@@ -27,9 +36,11 @@ array=[];
 for (var i=0;i<10;i++){
     person1 = new Person();
     array.push(person1);
+    console.log(person1);
+    console.log(person1.nombre)
 }
-console.log(person1);
-console.log(person1.nombre)
+console.log(array);
+
 /*
 console.log(person1.firstName);
 
@@ -122,7 +133,9 @@ coche1=new Coche("Toyota","Auris",12345);
 console.log(coche1.bastidor);
 coche2=new Coche("Toyota","Aygo",11111);
 console.log(coche2.bastidor);
-Coche=function (marca="",modelo="",bastidor=0,km=0){
+Coche=function (
+    marca="",modelo="",
+    bastidor=0,km=0){
     this.marca=marca;
     this.modelo=modelo;
     this.bastidor=bastidor;
@@ -281,10 +294,10 @@ var Persona=function (nombre="") {
     this.nombre = nombre;
 };
 // Definimos el constructor Estudiante
-var Estudiante=function (primerNombre="", asunto="") {
+var Estudiante=function (nombre="", asunto="") {
     // Llamamos al constructor padre, nos aseguramos (utilizando Function#call) que "this" se
     // ha establecido correctamente durante la llamada
-    Persona.call(this, primerNombre);
+    Persona.call(this, nombre);
 
     //Inicializamos las propiedades específicas de Estudiante
     this.asunto = asunto;
@@ -394,11 +407,11 @@ public class Moto extends Vehiculo{
 }
  */
 
-var Padre=function(proPadre){
-    this.proPadre=proPadre;
+var Madre=function(proMadre){
+    this.proMadre=proMadre;
 };
-var Hija=function(proPadre,proHija){
-    Padre.call(this,proPadre);
+var Hija=function(proMadre,proHija){
+    Madre.call(this,proMadre);
     this.proHija=proHija;
 };
 Hija.prototype=Object.create(Padre.prototype);
@@ -428,6 +441,8 @@ var Cliente=function(nombre=""){
 };
 var c1=new Cliente();
 console.log(c1);
+console.log(c1.nombre);
+console.log(c1.direccionPostal.calle);
 
 
 var Cliente=function(nombre="",calle="",piso=""){
@@ -443,17 +458,17 @@ console.log(c1);
 //herencia de tres niveles
 var Vehiculo=function(edad=""){
     this.edad=edad;
-}
+};
 
 var Coche=function(edad,marca){
     Vehiculo.call(this,edad);
     this.marca=marca;
-}
+};
 
 var Suv=function(edad,marca,traccion){
     Coche.call(this,edad,marca);
     this.traccion=traccion;
-}
+};
 
 var miSuv=new Suv();
 console.log(miSuv);
