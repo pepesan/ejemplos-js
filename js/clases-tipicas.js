@@ -51,6 +51,17 @@ console.log(porcion);
 porcion = mensaje.substr(1, 7); // porcion = "ola Mun"
 console.log(porcion);
 
+var email = "pepesan@gmail.com"
+var posArroba = email.indexOf("@");
+console.log(posArroba);
+var domainText = email.substring(posArroba+1);
+// domainText = email.substring(email.indexOf("@")+1);
+console.log(domainText)
+var emailUser = email.substring(0,posArroba);
+console.log(emailUser);
+
+
+
 
 var parrafo= "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam vitae ex odio. Suspendisse congue porttitor molestie. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec rhoncus felis dolor, ac convallis dolor mattis at. Nulla molestie urna eu nulla scelerisque, at accumsan nunc tincidunt. Nam aliquam nunc non consequat convallis. Suspendisse dignissim sagittis tellus, ut volutpat urna aliquet in. Sed dictum tincidunt diam id aliquam. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla facilisi. Proin posuere suscipit nisi non gravida. Quisque vestibulum velit a ipsum dictum, in pulvinar nisi pellentesque. Morbi tempus, turpis ac eleifend placerat, sem velit tincidunt sem, ut efficitur sem ligula id elit. Praesent ornare dolor non sollicitudin bibendum.";
 
