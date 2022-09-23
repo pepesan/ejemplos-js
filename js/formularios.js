@@ -42,7 +42,7 @@ function permite(elEvento, permitidos) {
     // o si es una tecla especial
     return permitidos.indexOf(caracter) != -1 || tecla_especial;
 }
-
+/*
 function validacion() {
     if (condicion que debe cumplir el primer campo del formulario) {
         // Si no se cumple la condicion...
@@ -64,3 +64,4 @@ function validacion() {
     // se han cumplido, por lo que se devuelve el valor true
     return true;
 }
+*/
