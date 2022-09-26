@@ -12,6 +12,7 @@ imprimeAlgo();
 function damePi(){
     return Math.PI;
 }
+
 console.log(damePi());
 
 //definir una función a la que se le pasa un parámetro

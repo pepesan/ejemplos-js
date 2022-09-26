@@ -13,6 +13,15 @@ console.log(array.length);
 array=new Array();
 console.log(array.length);
 
+// inicializar un array cone un número específico de elementos
+array = new Array(7);
+console.log(array.length);
+
+// rellenar un array con un valor predeterminado
+for (const i in array) {
+    array[i] = 0;
+}
+
 var array1 = [1];
 console.log(array1);
 
