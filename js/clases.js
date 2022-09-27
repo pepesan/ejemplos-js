@@ -20,6 +20,16 @@ arrayMulti= [
     ]
 ];
 
+var persona ={
+    nombre: "",
+    altura: 0,
+    peso: 0
+}
+var persona2 ={
+    nombre: "",
+    altura: 0,
+    peso: 0
+}
 //función constructora
 var Person = function () {
     this.nombre="";
@@ -31,6 +41,9 @@ var Person = function () {
 //var i=0;
 //var i=new Number(0);
 var person1 = new Person();
+var person2 = new Person();
+
+console.log(person1);
 
 array=[];
 for (var i=0;i<10;i++){
@@ -498,6 +511,33 @@ var persona= new Person();
 console.log(persona.altura);
 persona.setNombre("Pepe");
 console.log(persona.getNombre());
+
+class Coche {
+    constructor() {
+        this.marca = "";
+        this.modelo = "";
+        this.km = 0;
+    }
+    getMarca(){
+        return this.marca;
+    }
+    setMarca(marca){
+        this.marca = marca;
+    }
+    toString(){
+        return "Coche[marca: "+this.marca+", modelo: "+this.modelo+"]";
+    }
+}
+
+var coche1 = new Coche();
+console.log(coche1);
+coche1.marca = "Toyota";
+coche1.modelo = "Auris";
+console.log(coche1.modelo);
+coche1.setMarca("Audi");
+console.log(coche1.getMarca());
+console.log(coche1.toString());
+
 
 
 //Herencia en ES6
