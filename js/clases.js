@@ -538,11 +538,112 @@ coche1.setMarca("Audi");
 console.log(coche1.getMarca());
 console.log(coche1.toString());
 
+// Constructor con parámetros
+class Coche2 {
+    constructor(marca, modelo, km) {
+        this.marca = marca;
+        this.modelo = modelo;
+        this.km = km;
+    }
+    getMarca(){
+        return this.marca;
+    }
+    setMarca(marca){
+        this.marca = marca;
+    }
+    toString(){
+        return "Coche[marca: "+this.marca+", modelo: "+this.modelo+"]";
+    }
+}
 
+coche1 = new Coche2("Toyota", "Auris", 232456);
+console.log(coche1.marca);
+console.log(coche1.modelo);
+console.log(coche1.km);
+
+// constructor con parámetros por defecto
+
+class Coche3 {
+    constructor(marca = "", modelo = "", km= 0) {
+        this.marca = marca;
+        this.modelo = modelo;
+        this.km = km;
+    }
+    getMarca(){
+        return this.marca;
+    }
+    setMarca(marca){
+        this.marca = marca;
+    }
+    toString(){
+        return "Coche[marca: "+this.marca+", modelo: "+this.modelo+"]";
+    }
+}
+coche1 = new Coche3();
+console.log(coche1.marca);
+console.log(coche1.modelo);
+console.log(coche1.km);
+coche1 = new Coche3("Toyota", "Auris", 232456);
+console.log(coche1.marca);
+console.log(coche1.modelo);
+console.log(coche1.km);
 
 //Herencia en ES6
+
+class Madre {
+    constructor(nombre = "", dir = "") {
+        this.nombre = nombre;
+        this.dir=dir;
+    }
+}
+
+class Hija extends Madre{
+
+}
+
+var hija = new Hija();
+console.log(hija);
+
+// Añadir atributos a la hija a mayores de los de la madre
+class Madre {
+    constructor(nombre = "", dir = "") {
+        this.nombre = nombre;
+        this.dir=dir;
+    }
+    toString(){
+        return "Madre[nombre: "+this.nombre+", dir: "+this.dir+"]";
+    }
+}
+
+class Hija extends Madre{
+    constructor(nombre = "", dir = "", tlf ="") {
+        super(nombre, dir);
+        this.tlf = tlf;
+    }
+    /*
+    toString(){
+        return "Hija[nombre: "+this.nombre+", dir: "+this.dir+", tlf: "+this.tlf+"]";
+    }
+
+     */
+}
+
+var hija = new Hija();
+console.log(hija);
+var hija = new Hija("Vero", "Callao", "923123456");
+console.log(hija);
+console.log(hija.toString());
+
+
+class Metodos{
+    sumaDos(s1,s2){
+        return s1+s2;
+    }
+}
+
+
 class Point {
-    constructor(x, y) {
+    constructor(x = 0, y= 0) {
         this.x = x;
         this.y = y;
     }
@@ -550,8 +651,13 @@ class Point {
         return 'Point{"x":' + this.x + ',"y":' + this.y + '}';
     }
 }
+var punto = new Point();
+// imprimirá 0
+console.log("X: "+punto.x);
+// imprimirá 0
+console.log("Y: "+punto.y);
 
-var punto = new Point(2,3);
+punto = new Point(2,3);
 // imprimirá 2
 console.log("X: "+punto.x);
 // imprimirá 3
@@ -568,7 +674,7 @@ console.log("Y: "+punto.y);
 var punto2= new Point(3,4);
 
 class ColorPoint extends Point {
-    constructor(x, y, color) {
+    constructor(x = 0, y = 0, color= "black") {
         super(x, y);
         this.color = color;
     }
