@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Página principal</title>
+        <link rel="stylesheet" href="css/index.css"/>
+        <meta charset="utf-8"/>
+        <!--script>
+            function muestraMensaje() {
+                console.log('Gracias por pinchar');
+            }
+        </script-->
+        <script src="js/eventos-biblioteca.js"></script>
+        <script src="js/eventos-app-init.js"></script>
+    </head>
+    <body onload="console.log('La página se ha cargado completamente');">
+        <h1 id="algo">Eventos</h1>
+        <div>
+            <input type="button" value="Púlsame" onclick="console.log('botón pulsado');"/>
+        </div>
+        <div>
+            <p onmouseover="console.log('moviendo el ratón');">Hola mundo</p>
+        </div>
+        <div id="contenidos" style="width:150px; height:60px;border:thin solid silver;"
+             onmouseover="document.getElementById('contenidos').style.borderColor='black';"
+             onmouseout="document.getElementById('contenidos').style.borderColor='silver';"
+        >
+            Sección de contenidos...
+        </div>
+        <div id="pepe" style="width:150px; height:60px;border:thin solid silver;"
+             onmouseover="this.style.borderColor='black';"
+             onmouseout="this.style.borderColor='silver';"
+        >
+
+            Sección de contenidos...
+        </div>
+
+        <div>
+            <h2>Llamada a función Js manejadora</h2>
+            <input type="button" value="Pinchame y verás" onclick="muestraMensaje()" />
+        </div>
+        <div style="padding: .2em; width: 150px; height:60px; border: thin solid silver"
+             onmouseover="resalta(this)"
+             onmouseout="resalta(this)">
+            Sección de contenidos...
+        </div>
+        <div>
+            <input id="pinchable" type="button" value="Pinchame y verás" />
+        </div>
+        <script src="js/eventos-app.js"></script>
+        <div>
+            <input id="pinchable2" type="button" value="Pinchame y verás con script arriba" />
+        </div>
+
+
+    </body>
+</html>
