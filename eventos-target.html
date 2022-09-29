@@ -9,12 +9,24 @@
 		<meta name="keywords" content="html, ejemplo xhtml, esqueleto xhtml" />
 		<meta name="description" content="Ejemplo de Esqueleto de XHTML 1.0 Trasitional" />
 		<title>Mi titulo</title>
+		<link href="css/eventos-target.css" type="text/css" rel="stylesheet"/>
 		<script src="js/eventos-target.js"></script>
 	</head>
 	<body>
 		<h1>Ejecución de código Javascript utilizando la etiqueta script</h1>
 		<button id="button1">Botón 1</button><br/>
 		<button id="button2">Botón 2</button><br/>
+		<button id="button3">Botón 3</button><br/>
 		<a id="enlace1" href="https://google.es/" target="_blank">Enlace a google</a>
+		<form id="miform" action="#" method="post">
+			<div>
+				<label for="nombre">Nombre:</label>
+				<input id="nombre" type="text" name="nombre" placeholder="Introduce el nombre"/>
+				<div id="nombre-error"></div>
+			</div>
+			<div>
+				<input id="submit" type="submit" value="Enviar"/>
+			</div>
+		</form>
 	</body>
 </html>
