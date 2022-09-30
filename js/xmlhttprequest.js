@@ -18,7 +18,13 @@ function init(){
             console.log(`Error ${xhr.status}: ${xhr.statusText}`); // ej. 404: No encontrado
         } else { // muestra el resultado
             console.log(`Hecho, obtenidos ${xhr.response.length} bytes`); // Respuesta del servidor
-            console.log(xhr.response);
+            // console.log(xhr.response);
+            const obj = JSON.parse(xhr.response);
+            // console.log(obj);
+            for (const i in obj){
+                //console.log(obj[i]);
+                console.log("Nombre: "+ obj[i].nombre + ", Nª Diputados: "+obj[i].dipu+", Logotipo: "+ obj[i].imagen);
+            }
         }
     };
 

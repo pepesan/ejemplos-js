@@ -7,11 +7,17 @@ function init(){
 
     console.log(fetchPromise);
 
-    fetchPromise.then((response) => {
-        console.log(`Received response: ${response.status}`);
-    }).catch(error => {
-        console.log(error);
-    });
+    fetchPromise
+        .then((response) => {
+            console.log(`Received response: ${response.status}`);
+            console.log(response);
+            console.log(response.status);
+            console.log(response.body);
+
+        })
+        .catch(error => {
+            console.log(error);
+        });
 
     console.log("Started request…");
 
