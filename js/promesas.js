@@ -12,7 +12,7 @@ function init(){
             console.log(`Received response: ${response.status}`);
             console.log(response);
             console.log(response.status);
-            console.log(response.body);
+            console.log(response.json());
 
         })
         .catch(error => {
@@ -20,6 +20,24 @@ function init(){
         });
 
     console.log("Started request…");
+
+    const data = { username: 'example' };
+
+    fetch('https://httpbin.org/post', {
+        method: 'POST', // or 'PUT'
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+    })
+        .then((response) => response.json())
+        .then((data) => {
+            console.log('Success:', data);
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+        });
+
 
 }
 function loaded(){
