@@ -40,6 +40,47 @@ function init(){
     xhr.onerror = function() {
         console.log("Solicitud fallida");
     };
+
+    // 1. Crea un nuevo objeto XMLHttpRequest
+    let xhr2 = new XMLHttpRequest();
+
+    // 2. Configuración: solicitud GET para la URL /article/.../load
+    xhr2.open('POST', 'https://httpbin.org/post');
+    // 3. Envío de Cabeceras Content-Type
+    xhr2.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+    // 3. Envía la solicitud a la red
+    xhr2.send(JSON.stringify({ "email": "hello@user.com", "response": { "name": "Tester" } })   );
+
+    // 4. Esto se llamará después de que la respuesta se reciba
+    xhr2.onload = function() {
+        if (xhr.status !== 200) { // analiza el estado HTTP de la respuesta
+            console.log(`Error ${xhr2.status}: ${xhr2.statusText}`); // ej. 404: No encontrado
+        } else { // muestra el resultado
+            console.log(`Hecho, obtenidos ${xhr2.response.length} bytes`); // Respuesta del servidor
+            // console.log(xhr.response);
+            const obj = JSON.parse(xhr2.response);
+            // console.log(obj);
+            for (const i in obj){
+                console.log(obj[i]);
+            }
+        }
+    };
+
+    xhr2.onprogress = function(event) {
+        if (event.lengthComputable) {
+            console.log(`Recibidos ${event.loaded} de ${event.total} bytes`);
+        } else {
+            console.log(`Recibidos ${event.loaded} bytes`); // sin Content-Length
+        }
+
+    };
+
+    xhr2.onerror = function() {
+        console.log("Solicitud fallida");
+    };
+
+
+
 }
 function loaded(){
     console.log("Completamente Cargada");
