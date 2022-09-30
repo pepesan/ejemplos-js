@@ -13,6 +13,10 @@ function init(){
             console.log(response);
             console.log(response.status);
             console.log(response.json());
+            console.log(response.headers);
+            for (var pair of response.headers.entries()) {
+                console.log(pair[0]+ ': '+ pair[1]);
+            }
 
         })
         .catch(error => {
