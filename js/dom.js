@@ -14,7 +14,7 @@ elemento.lang="en";
 console.log(elemento.lang);
 console.log(elemento.innerHTML);
 
-elemento.innerHTML="demasiado sencilla";
+elemento.innerHTML="<small>demasiado sencilla</small>";
 
 
 console.log(document.body);
@@ -41,7 +41,7 @@ document.getElementsByClassName("miclase")[0]
 // Crear nodo de tipo Element
 var parrafo = document.createElement("p");
 console.log(parrafo);
-
+parrafo.id = "miparrafomolon";
 // Crear nodo de tipo Text
 var contenido = document.createTextNode("Hola Mundo!");
 console.log(contenido);
@@ -51,14 +51,17 @@ parrafo.appendChild(contenido);
 console.log(parrafo);
 
 // Añadir el nodo Element como hijo de la pagina
- console.log(document.body.children.length);
+console.log(document.body.children.length);
 
 document.body.appendChild(parrafo);
- console.log(document.body.children.length);
+console.log(document.body.children.length);
+
+document.getElementById("miparrafomolon").innerHTML = "Otro contenido";
 
 
 // Crear nodo de tipo Element
 var midiv = document.createElement("div");
+midiv.id = "midiv";
 // Crear nodo de tipo Text
 var contenidoDiv = document.createTextNode("Dentro del div");
 // Añadir el nodo Text como hijo del nodo Element
@@ -79,7 +82,7 @@ parrafo.appendChild(contenido);
 midiv.appendChild(parrafo);
 // Añadir el nodo Element como hijo de la pagina
 document.body.appendChild(midiv);
-
+/*
 //poda de una rama
 var miStrong =
     document.getElementById("grande");
