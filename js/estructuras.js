@@ -176,4 +176,16 @@ for (const member of teamGenerator(team)) {
 	console.log(member);
 }
 
+try {
+	functioninexixtente();
+} catch (error) {
+	console.error(error);
+	// expected output: ReferenceError: nonExistentFunction is not defined
+	// Note - error messages will vary depending on browser
+	console.log("Reinténtalo más adelante");
+}
+finally{
+	console.log("ejecuta siempre");
+}
+
 
