@@ -181,3 +181,60 @@ function sortRestArgs(...theArgs) {
 }
 
 console.log(sortRestArgs(5,3,7,1)); // muestra 1,3,5,7
+
+// paso por parámetro de una función
+function unaFuncion(){
+    console.log("algo");
+}
+function requiereOtraFuncion(miFuncion){
+    miFuncion();
+}
+requiereOtraFuncion(unaFuncion);
+
+// ejemplo de llamada a función con parámetros
+
+function otraFuncion(s1,s2){
+    return s1+s2;
+}
+var salida = otraFuncion(1,2);
+console.log(salida);
+
+function ejecutaFuncion(unafuncion){
+    var salida = unafuncion(1,2);
+    console.log(salida);
+}
+ejecutaFuncion(otraFuncion);
+
+function ejecutaFuncionConParametros(
+    unafuncion,
+    s1 = 0,
+    s2 = 0){
+    var salida = unafuncion(s1,s2);
+    console.log(salida);
+}
+ejecutaFuncionConParametros(otraFuncion);
+
+function ejecutaFuncionConParametrosYValorPorDefecto(
+    //unafuncion = (s1,s2) => {return s1+s2;},
+    unafuncion = function (s1,s2){return s1+s2;},
+    s1 = 0,
+    s2 = 0){
+    var salida = unafuncion(s1,s2);
+    console.log(salida);
+}
+ejecutaFuncionConParametrosYValorPorDefecto();
+
+function Suma2(s1,s2){
+    return s1+s2;
+}
+
+function Resta2(s1,s2){
+    return s1-s2;
+}
+
+function actua(funcionAEjecutar, s1, s2) {
+    return funcionAEjecutar(s1,s2);
+}
+
+console.log(actua(Suma2,1,2));
+console.log(actua(Resta2,1,2));
