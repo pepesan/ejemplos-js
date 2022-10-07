@@ -238,3 +238,39 @@ function actua(funcionAEjecutar, s1, s2) {
 
 console.log(actua(Suma2,1,2));
 console.log(actua(Resta2,1,2));
+
+// funciones recursivas
+function sumaRecursiva(numero) {
+    if (numero>1){
+        return numero + sumaRecursiva(numero-1);
+    }else{
+        return 1;
+    }
+}
+salida =  sumaRecursiva(2);
+console.log(salida);
+
+// función recursiva pasada a iterativas (bucles)
+function sumaRecursivaConBucle(numero){
+    var valor = numero;
+    numeroActual= numero;
+    while (numeroActual>1){
+        var numeroActual=numeroActual-1;
+        valor += numeroActual;
+    }
+    return valor;
+}
+console.log(sumaRecursivaConBucle(2));
+
+
+function buscaElementoEnArray(elemento, array){
+    for (const indice in array) {
+        if(array[indice]=== elemento){
+            return indice;
+        }
+    }
+    return -1;
+}
+
+var array = [1,2];
+console.log(buscaElementoEnArray(2,array));

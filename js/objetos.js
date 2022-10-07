@@ -3,44 +3,112 @@
  * de una alerta mediante Javascript
  */
 var arrayVacio=[];
+
+var arrayConDatos=[1,2,3];
+console.log(arrayConDatos);
+arrayConDatos [0]= 0;
+
 var objetoVacio={
 
 };
 // variable función
 var miFunction = function (){}
 
+var objetoSimple={
+    nombre_propiedad: "Valor"
+};
+
+objetoSimple.nombre_propiedad = "Otro Valor";
+console.log(objetoSimple.nombre_propiedad);
+
+objetoSimple={
+    nombre_propiedad: 2,
+    nombre_propiedad2: true
+};
+
+objetoSimple.nombre_propiedad2 = 27;
+console.log(objetoSimple.nombre_propiedad2);
+
+var objetoConMetodo={
+    nombre_metodo: function () {
+        console.log("Algo");
+    },
+    devuelveAlgo(){
+        return "algo";
+    }
+};
+
+objetoConMetodo.nombre_metodo();
+console.log(objetoConMetodo.devuelveAlgo());
+
 var objeto={
     // propiedades o atributos
-    nombre: "David",
-    apellido: "Vaquero",
-    ciudad: "Salamanca",
-    profesion: "autonomo",
-    edad:37,
-    activo:true,
-    cursos:["Javascript","HTML","CSS"],
+    "nombre": "David",
+    "apellido": "Vaquero",
+    "ciudad": "Salamanca",
+    "profesion": "autonomo",
+    // propiedad de tipo numero
+    "edad":37,
+    // propiedad de tipo booleana
+    "activo":true,
+    // propiedad de tipo array
+    "cursos": ["Javascript","HTML","CSS"],
+    // encapsulamiento
+    "direccion": {
+        "calle":"Mayor",
+        "numero": "17",
+        "piso": "1º"
+    },
+
+    /*
+        toString
+        description: returns a string with the object content
+        Args:
+            None
+        Returns:
+            A string with the textual object's content
+     */
     // propiedad de tipo función, ó método
-    toString: function(){
+    "toString": function(){
         //console.log(objeto);
         //console.log(objeto.nombre);
         //console.log(this.nombre);
         return "Objeto[nombre:"+this.nombre+",apellido:"+this.apellido
             +",ciudad:"+this.ciudad+",profesion:"+this.profesion+"]";
     },
-    getNombre:function(){
+    /*
+        getNombre
+        description: returns the nombre property
+        Args:
+            None
+        Returns:
+            The nombre property
+     */
+    "getNombre":function(){
         return this.nombre;
     },
-    setNombre: function (n) {
+    /*
+        setNombre
+        description: Set the nombre property by passed argument
+        Args:
+            - n: name to set to nombre
+        Returns:
+            Nothing
+     */
+    "setNombre": function (n) {
         this.nombre=n;
     },
-    addCurso: function (nombreCurso){
+    /*
+        addCurso
+        description: Add a new course to the end of the cursos array
+        Args:
+            - nombreCurso: course name to add
+        Returns:
+            Nothing
+     */
+    "addCurso": function (nombreCurso){
         this.cursos.push(nombreCurso);
     },
-    //encapsulamiento
-    direccion:{
-        calle:"mayor",
-        numero:14,
-
-    }
 };
 console.log(objeto);
 console.log(objeto.nombre);
@@ -86,9 +154,10 @@ var coche = {
     marca: "Toyota",
     modelo: "Auris"
 }
-console.log(coche.marca);
-console.log(coche.modelo);
+console.log(coche.marca); // Toyota
+console.log(coche.modelo); // Auris
 coche.modelo = "Corolla";
+console.log(coche.modelo); // Corolla
 
 coche = {
     _marca: "Toyota",
@@ -106,9 +175,31 @@ coche = {
         this._modelo = modelo;
     }
 }
+// acceso a propiedad privada
+// NO RECOMENDADO/PROHIBIDO
+console.log(coche._marca);
 // getter
 console.log(coche.getMarca())
 // setter
 coche.setMarca("Audi");
 console.log(coche.getMarca());
+
+
+// Añadir propiedades después de definir el objeto
+coche.matricula = "SA-1234-D";
+console.log(coche.matricula);
+// añadimos un método al objeto después de su inicialización
+coche.toString = function (){
+    return "Coche[ marca: "
+            +this._marca
+            +", modelo: "
+            +this._modelo
+            +", matricula: "
+            +this.matricula
+            +"]";
+}
+
+console.log(coche.toString());
+// console.log siempre usa el toString para presentar el objeto
+console.log(coche);
 
