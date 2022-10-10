@@ -822,3 +822,30 @@ class Square extends Rectangle {
 
 // But can a rectangle be substituted by a square?
 //f(new Square()); // error
+
+
+class Vehiculo{
+    constructor(
+        ancho = 0 ,
+        alto = 0,
+        largo = 0
+        ) {
+        this.ancho = ancho;
+        this.alto = alto;
+        this.largo = largo;
+    }
+}
+
+class Coche extends Vehiculo{
+    constructor(
+        ancho = 0 ,
+        alto = 0,
+        largo = 0
+    ) {
+        super(ancho, alto, largo);
+        this.n_ruedas = 4;
+    }
+}
+
+var coche = new Coche();
+console.log(coche.n_ruedas);
