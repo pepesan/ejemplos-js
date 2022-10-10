@@ -41,6 +41,10 @@ var Person = function () {
 //var i=0;
 //var i=new Number(0);
 var person1 = new Person();
+console.log(person1);
+console.log(person1.nombre);
+console.log(person1.altura);
+console.log(person1.peso);
 var person2 = new Person();
 
 console.log(person1);
@@ -509,6 +513,7 @@ class Person {
 
 var persona= new Person();
 console.log(persona.altura);
+console.log(persona['nombre']);
 persona.setNombre("Pepe");
 console.log(persona.getNombre());
 
@@ -525,7 +530,9 @@ class Coche {
         this.marca = marca;
     }
     toString(){
-        return "Coche[marca: "+this.marca+", modelo: "+this.modelo+"]";
+        return "Coche[marca: "+this.marca
+            +", modelo: "+this.modelo+", km: "
+            + this.km+"]";
     }
 }
 
@@ -579,11 +586,20 @@ class Coche3 {
         return "Coche[marca: "+this.marca+", modelo: "+this.modelo+"]";
     }
 }
-coche1 = new Coche3();
+
+coche1 = new Coche3("Toyota", "Auris", 232456);
 console.log(coche1.marca);
 console.log(coche1.modelo);
 console.log(coche1.km);
-coche1 = new Coche3("Toyota", "Auris", 232456);
+coche1 = new Coche3("Toyota", "Auris");
+console.log(coche1.marca);
+console.log(coche1.modelo);
+console.log(coche1.km);
+coche1 = new Coche3("Toyota");
+console.log(coche1.marca);
+console.log(coche1.modelo);
+console.log(coche1.km);
+coche1 = new Coche3();
 console.log(coche1.marca);
 console.log(coche1.modelo);
 console.log(coche1.km);
@@ -601,8 +617,12 @@ class Hija extends Madre{
 
 }
 
+// Objeto hija tiene las propiedades de la madre
 var hija = new Hija();
 console.log(hija);
+// reusamos el constructor de la clase Madre
+hija = new Hija("Ana", "casa");
+console.log(hija)
 
 // Añadir atributos a la hija a mayores de los de la madre
 class Madre {
@@ -620,12 +640,11 @@ class Hija extends Madre{
         super(nombre, dir);
         this.tlf = tlf;
     }
-    /*
+
     toString(){
         return "Hija[nombre: "+this.nombre+", dir: "+this.dir+", tlf: "+this.tlf+"]";
     }
 
-     */
 }
 
 var hija = new Hija();
@@ -640,7 +659,18 @@ class Metodos{
         return s1+s2;
     }
 }
+// Añadir métodos con la herencia
+class OtrosMetodos extends Metodos{
+    sumaTres(s1, s2, s3){
+        return s1+s2+s3;
+    }
+}
 
+var misMetodos = new OtrosMetodos();
+// usamos en método definido en la clase madre
+console.log(misMetodos.sumaDos(1,2));
+// usamos el método definido en la clase hija
+console.log(misMetodos.sumaTres(1,2,3));
 
 class Point {
     constructor(x = 0, y= 0) {
@@ -732,6 +762,7 @@ class SimpleDate {
 SimpleDate.setDefaultDate(1970, 1, 1);
 const defaultDate = new SimpleDate();
 
+console.log(Math.sqrt(4));
 
 //Getters y Setters
 class Rectangle {
@@ -752,8 +783,14 @@ class Rectangle {
     }
 }
 var cuadro= new Rectangle();
+// cuadro.setHeight(3)
 cuadro.height=3;
+// console.log(cuadro.getHeight)
+console.log(cuadro.height);
+// cuadro.setWidht(4)
 cuadro.width=4;
+// console.log(cuadro.getWidth)
+console.log(cuadro.width);
 
 // A function that operates on an instance of Rectangle
 function f(rectangle) {
