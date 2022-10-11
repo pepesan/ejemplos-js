@@ -82,3 +82,57 @@ var profesor = new Profesor();
 console.log(personita);
 console.log(estudiante);
 console.log(profesor);
+
+
+class Producto{
+    constructor(
+        id = 0,
+        nombre = "",
+        precio = 0,
+        descripcion = ""){
+        this._id = id;
+        this._nombre = nombre;
+        this._precio = precio;
+        this._descripcion = descripcion;
+    }
+    set id(id) {
+        this._id = id;
+    }
+
+    get id() {
+        return this._id;
+    }
+    set nombre(nombre) {
+        this._nombre = nombre;
+    }
+
+    get nombre() {
+        return this._nombre;
+    }
+    set precio(precio) {
+        this._precio = precio;
+    }
+
+    get precio() {
+        return this._precio;
+    }
+    set descripcion(descripcion) {
+        this._descripcion = descripcion;
+    }
+
+    get descripcion() {
+        return this._descripcion;
+    }
+    toString(){
+        return `Producto[id: ${this._id}, nombre: \"${this._nombre}\", precio: ${this._precio}€, descripcion: \"${this._descripcion}\"]`
+    }
+}
+
+var producto = new Producto();
+
+producto.id = 0;
+producto.nombre = "Cecotec";
+producto.precio = 67;
+producto.descripcion = "cefetera consumo";
+console.log(producto.id);
+console.log(producto.toString());
