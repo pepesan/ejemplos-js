@@ -15,7 +15,9 @@ function creaParrafo() {
 }
 function cambiaBoton(){
     console.log("Botón pulsado");
-    // creaParrafo();
+    var boton = document.getElementById("boton");
+    boton.innerHTML = "Botón pulsado";
+    creaParrafo();
 }
 
 
