@@ -23,12 +23,19 @@ function init(){
             // console.log(obj);
             for (const i in obj){
                 //console.log(obj[i]);
-                console.log("Nombre: "+ obj[i].nombre + ", Nª Diputados: "+obj[i].dipu+", Logotipo: "+ obj[i].imagen);
+                console.log(
+                    "Nombre: "
+                    + obj[i].nombre
+                    + ", Nª Diputados: "
+                    +obj[i].dipu
+                    +", Logotipo: "
+                    + obj[i].imagen);
             }
         }
     };
-
+    // mientras que carga los datos
     xhr.onprogress = function(event) {
+        console.log("onProgress");
         if (event.lengthComputable) {
             console.log(`Recibidos ${event.loaded} de ${event.total} bytes`);
         } else {
@@ -36,7 +43,7 @@ function init(){
         }
 
     };
-
+    // si hay algún error
     xhr.onerror = function() {
         console.log("Solicitud fallida");
     };
@@ -49,7 +56,15 @@ function init(){
     // 3. Envío de Cabeceras Content-Type
     xhr2.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
     // 3. Envía la solicitud a la red
-    xhr2.send(JSON.stringify({ "email": "hello@user.com", "response": { "name": "Tester" } })   );
+    xhr2.send(
+        JSON.stringify(
+            {
+                "email": "hello@user.com",
+                "response": {
+                    "name": "Tester"
+                } }
+        )
+    );
 
     // 4. Esto se llamará después de que la respuesta se reciba
     xhr2.onload = function() {
