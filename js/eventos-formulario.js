@@ -34,17 +34,25 @@ function domCargado(event) {
             evento.preventDefault();
             evento.stopPropagation();
             console.log("submit");
+            // busco el campo
+            let campo = document.getElementById("campo");
             // validar los campos del formulario
             if (validaForm()){
                 // si todo va bien enviar los datos
                 console.log("formulario valida");
+                // muestro el error vacío
                 mostrarMensajeError("", "error-campo");
+                // marco el campo con válido en css
+                campo.className="input-valid";
             }else{
                 // si todo va mal enseñar los fallos al rellenar el form
                 console.log("formulario no valida");
+                // muestro el error con mensaje
                 mostrarMensajeError(
                     "<p>El campo es obligatorio de rellenar!</p>",
                     "error-campo");
+                // marco el campo como error en css
+                campo.className="input-error";
             }
         });
 }

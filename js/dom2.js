@@ -1,12 +1,15 @@
 /*
- * Código de ejemplo de el lanzamiento
+ * Código de ejemplo del lanzamiento
  * de una alerta mediante Javascript
  */
 var enlace = document.getElementById("enlace");
 console.log(enlace);
 console.log(enlace.href);
 console.log(enlace.id);
+// cambio de un atributo de un elemento html
 enlace.target="_blank";
+// asignamos la clase rojo al enlace
+enlace.className="rojo";
 
 //Acceder a los estilos desde JS
 var imagen = document.getElementById("imagen");
