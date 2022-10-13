@@ -4,7 +4,7 @@
  */
 function valida(elemento){
     var valor=elemento.value;
-    if(valor!="" && valor.length>=5 && valor.length<=10){
+    if(valor!=="" && valor.length>=5 && valor.length<=10){
         return true;
     }else{
         //no valida
@@ -12,11 +12,11 @@ function valida(elemento){
     }
 }
 function ensenaErrores(campo){
-    /*var midiv=document.getElementById("mensaje-error");
-    midiv.innerHTML="<ul><li>Nombre: No es válido, tiene que" +
+    var midiv=document.getElementById("mensaje-error");
+    midiv.innerHTML="<ul><li>No es válido, tiene que" +
         " tener entre 5 y 10 caracteres</li></ul>";
     //alert("Ha habido un error");
-    */
+
     campo.className="error";
 }
 function onBlur(evento){
@@ -28,6 +28,8 @@ function onBlur(evento){
         //el campo valida
         console.log("El campo con id:"+evento.target.id+" valida");
         evento.target.className="valido";
+        var midiv=document.getElementById("mensaje-error");
+        midiv.innerHTML = "";
 
     }else{
         //el campo no valida
