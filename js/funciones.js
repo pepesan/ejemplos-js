@@ -19,7 +19,10 @@ console.log(damePi());
 function imprime(cadena){
     console.log(cadena);
 }
+// cadena = "Hola Mundo!"
 imprime("Hola Mundo!");
+// cadena = "Adiós Mundo Cruel!"
+imprime("Adiós Mundo Cruel!");
 
 
 
@@ -35,20 +38,23 @@ function sumaDeDos(s1,s2){
 
 var a=1;
 var b=5;
+// s1 = a y s2 = b
 var num=sumaDeDos(a,b);
-console.log(num);
+console.log(num); // 6
 // s1= 3, s2=7
 num = sumaDeDos(3,7);
-console.log(num);
+console.log(num); // 10
+
+console.log(sumaDeDos(1,2)); // 3
 
 function restaDeDos(r1,r2){
     var res=r1-r2;
     return res;
 }
 var resta=restaDeDos(2,1);
-console.log(resta);
+console.log(resta); // 1
 resta=restaDeDos(5,2);
-console.log(resta);
+console.log(resta); // 3
 
 var global=0;
 
