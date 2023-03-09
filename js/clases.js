@@ -423,7 +423,7 @@ public class Moto extends Vehiculo{
 
 }
  */
-
+/*
 var Madre=function(proMadre){
     this.proMadre=proMadre;
 };
@@ -836,34 +836,129 @@ class Vehiculo{
     }
 }
 
-class Coche extends Vehiculo{
+class Coche2 extends Vehiculo2{
     constructor(
         ancho = 0 ,
         alto = 0,
-        largo = 0
+        largo = 0,
+        n_ruedas = 0
     ) {
         super(ancho, alto, largo);
-        this.n_ruedas = 4;
+        this.n_ruedas = n_ruedas;
     }
 }
 
-var coche = new Coche();
+var coche = new Coche2();
 console.log(coche.n_ruedas);
+coche = new Coche2(2,2,4,4);
+console.log(coche);
 
 
-class Piso {
-
+class Cliente2{
     constructor() {
-        this._metrosCuadrados = 0;
+        this._nombre = "";
+        this._direccion = "";
+        this._email = "";
+        this._tlf = "";
+        this._contacto = "";
+    }
+    get nombre() {
+        return this._nombre;
+    }
+    set nombre(in_nombre) {
+        this._nombre = in_nombre;
+    }
+
+    get direccion() {
+        return this._direccion;
+    }
+    set direccion(in_direccion) {
+        this._direccion = in_direccion;
+    }
+
+    get email() {
+        return this._email;
+    }
+    set email(in_email) {
+        this._email = in_email;
+    }
+
+    get tlf() {
+        return this._tlf;
+    }
+    set tlf(in_tlf) {
+        this._tlf = in_tlf;
+    }
+
+    get contacto() {
+        return this._contacto;
+    }
+    set contacto(in_contacto) {
+        this._contacto = in_contacto;
     }
 
 
-    get metrosCuadrados() {
-        return this._metrosCuadrados;
-    }
 
-    set metrosCuadrados(value) {
-        this._metrosCuadrados = value;
-    }
 
+    toString(){
+        return "Cliente{"
+        + "nombre: "+this._nombre+","
+        +"direccion: "+this.direccion+","
+        +"email: "+this.email+","
+        +"tlf: "+this.tlf+","
+        +"contacto: "+this.contacto+","
+        + "}";
+    }
 }
+
+var cliente1 = new Cliente2();
+console.log(cliente1.toString());
+
+class Cliente3{
+    constructor(
+        // constructor con valores por defecto
+        nombre = "",
+        direccion  = "",
+        email  = "",
+        tlf  = "",
+        contacto  = "") {
+        this._nombre = nombre;
+        this._direccion = direccion;
+        this._email = email;
+        this._tlf = tlf;
+        this._contacto = contacto;
+    }
+    get nombre() {
+        return this._nombre;
+    }
+    set nombre(in_nombre) {
+        this._nombre = in_nombre;
+    }
+
+    get direccion() {
+        return this._direccion;
+    }
+    set direccion(in_direccion) {
+        this._direccion = in_direccion;
+    }
+
+    get email() {
+        return this._email;
+    }
+    set email(in_email) {
+        this._email = in_email;
+    }
+
+    get tlf() {
+        return this._tlf;
+    }
+    set tlf(in_tlf) {
+        this._tlf = in_tlf;
+    }
+
+    get contacto() {
+        return this._contacto;
+    }
+    set contacto(in_contacto) {
+        this._contacto = in_contacto;
+    }

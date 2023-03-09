@@ -1,7 +1,9 @@
 console.log("JS cargado!");
 
 //crea un array de meses
-var meses=["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio","Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
+var meses=["Enero", "Febrero", "Marzo", "Abril", "Mayo", 
+"Junio", "Julio","Agosto", "Septiembre", "Octubre", 
+"Noviembre", "Diciembre"];
 //mostrar por pantalla los doce nombres
 for(var i in meses){
     console.log(meses[i]);
@@ -19,7 +21,8 @@ console.log(valores[4]);
 //imprime por pantalla la suma de los dos números
 var res=valores[1]+valores[5];
 console.log(res);
-// haz una sentencia condicional que compruebe si la segunda posición del array respecto a la última es mayor
+// haz una sentencia condicional que compruebe si la segunda posición del array 
+// respecto a la última es mayor
 if(valores[1]>valores[5]){
     console.log("Es mayor!");
 }
