@@ -21,11 +21,25 @@ function init(){
             for (let i = 0; i < datos.length; i++) {
                 // Crear el objeto del boton
                 const li = document.createElement("button");
+                li.id = "part-"+ datos[i].nombre;
                 li.innerHTML += "Partido: ";
                 li.innerHTML += datos[i].nombre;
                 li.innerHTML += ", Diputados: ";
                 li.innerHTML += datos[i].dipu;
-
+                // Añadir un comportamiento al boton
+                li.addEventListener(
+                    "click",
+                    (evento)=>{
+                        console.log(evento);
+                        console.log(evento.target);
+                        let elemento = null;
+                        if (evento.target.localName == "img"){
+                            elemento = evento.target.parentNode;
+                        }else {
+                            elemento = evento.target;
+                        }
+                        console.log("boton pulsado: "+ elemento.id);
+                    });
                 const imagen = document.createElement("img");
                 imagen.src =
                     "https://cursosdedesarrollo.com/pactometro/img/"
@@ -37,6 +51,8 @@ function init(){
                                 li.innerHTML += datos[i].imagen;
                                 li.innerHTML += "'/>";
                                  */
+
+
                 // añadir lo al final de los hijos del div de contenido
                 miLista.appendChild(li);
             }
