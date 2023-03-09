@@ -24,12 +24,14 @@ function hola(event){
             event.target.innerHTML="He cambiado el elemento";
     }
 }
-function noHagasNada(event){
+// capturamos un objeto de tipo PointerEvent
+function noHagasNada(evento){
     console.log("Enlace pulsado");
+    console.log(evento);
     // no debería ejecutar nada más
-    event.preventDefault();
+    evento.preventDefault();
     // no debería lanzar el evento en más elementos
-    event.stopPropagation();
+    evento.stopPropagation();
 }
 function manejaSubmit(evento){
     console.log("Formulario Enviado");
