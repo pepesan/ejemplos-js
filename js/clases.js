@@ -849,3 +849,21 @@ class Coche extends Vehiculo{
 
 var coche = new Coche();
 console.log(coche.n_ruedas);
+
+
+class Piso {
+
+    constructor() {
+        this._metrosCuadrados = 0;
+    }
+
+
+    get metrosCuadrados() {
+        return this._metrosCuadrados;
+    }
+
+    set metrosCuadrados(value) {
+        this._metrosCuadrados = value;
+    }
+
+}

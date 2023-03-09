@@ -30,6 +30,14 @@ window.addEventListener("load", init);
 
 function domCargado(event) {
     console.log("El DOM se ha cargado completamente");
+    // buscar el boton
+    var botonClase = document.getElementById("boton-clase");
+    botonClase.addEventListener(
+        "click",
+        () => {console.log("boton clase pulsado");}
+    );
+
+
     // buscar el elemento del botón con id = "sencillo"
     var botonSencillo = document.getElementById("sencillo");
     // cambiar el comportamiento del click en ese botón
