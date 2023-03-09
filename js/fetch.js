@@ -3,6 +3,7 @@
  */
 
 var datos = null;
+var sumados = 0;
 function init(){
     console.log("Dom Cargado");
     // realiza una petición a una url
@@ -22,6 +23,9 @@ function init(){
                 // Crear el objeto del boton
                 const li = document.createElement("button");
                 li.id = "part-"+ datos[i].nombre;
+                li.setAttribute("data-partido", datos[i].nombre);
+                li.setAttribute("data-dipu", datos[i].dipu);
+                li.setAttribute("data-imagen", datos[i].imagen);
                 li.innerHTML += "Partido: ";
                 li.innerHTML += datos[i].nombre;
                 li.innerHTML += ", Diputados: ";
@@ -38,6 +42,8 @@ function init(){
                         }else {
                             elemento = evento.target;
                         }
+                        sumados += parseInt(elemento.getAttribute("data-dipu"));
+                        console.log(sumados);
                         console.log("boton pulsado: "+ elemento.id);
                     });
                 const imagen = document.createElement("img");
