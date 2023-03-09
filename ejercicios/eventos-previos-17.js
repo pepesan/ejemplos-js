@@ -35,9 +35,15 @@ function manejaBlur(event) {
 
 function init(){
     console.log("Dom Cargado");
-    document.getElementById("enviar").addEventListener("click", clicked);
-    document.getElementById("boton-raton").addEventListener("mouseover", onMouseOver);
-    document.getElementById("boton-raton").addEventListener("mouseout", onMouseOut);
+    document
+        .getElementById("enviar")
+        .addEventListener("click", clicked);
+    document
+        .getElementById("boton-raton")
+        .addEventListener("mouseover", onMouseOver);
+    document
+        .getElementById("boton-raton")
+        .addEventListener("mouseout", onMouseOut);
     //document.getElementById("boton-raton").addEventListener("mousemove", onMouseMove);
     /*
     document

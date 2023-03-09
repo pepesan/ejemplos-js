@@ -14,7 +14,15 @@ function ocultaGenerica(event){
     //console.log(event.target);
     //Localizar al primer hijo
     //toggle con la clase oculta
-   event.target.parentNode.children[0].classList.toggle("oculta"); //document.getElementById("primerParrafo").classList.toggle("oculta"); 
+   event.target
+       // busco el elemento padre del enlace
+       .parentNode
+       // busco el primer hijo
+       .children[0]
+       // intento modificar el atributo class
+       .classList
+       // quiero poner o quitar la clase oculta
+       .toggle("oculta"); //document.getElementById("primerParrafo").classList.toggle("oculta");
     console.log(this.innerHTML);
     if(this.innerHTML=="Ocultar contenidos"){
         this.innerHTML="Mostrar Contenidos";
@@ -26,17 +34,17 @@ function ocultaGenerica(event){
 function oculta(event){
     //console.log("oculta");
     event.preventDefault();
-    document.getElementById("primerParrafo").classList.toggle("oculta"); 
+    document.getElementById("primerParrafo").classList.toggle("oculta");
 }
 function oculta2(event){
     //console.log("oculta");
     event.preventDefault();
-    document.getElementById("segundoParrafo").classList.toggle("oculta"); 
+    document.getElementById("segundoParrafo").classList.toggle("oculta");
 }
 function oculta3(event){
     //console.log("oculta");
     event.preventDefault();
-    document.getElementById("tercerParrafo").classList.toggle("oculta"); 
+    document.getElementById("tercerParrafo").classList.toggle("oculta");
 }
 */
 function init(){
